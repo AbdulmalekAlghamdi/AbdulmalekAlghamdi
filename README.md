@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Header](https://capsule-render.vercel.app/api?type=venom&color=gradient&customColorList=12,20,30&height=300&section=header&text=ABDULMALEK%20ALGHAMDI&fontSize=70&fontColor=ffffff&animation=twinkling&fontAlignY=38&desc=System%20Architect%20×%20AI%20Engineer%20×%20Top%203%20of%20Graduates&descAlignY=58&descSize=20&fontStyle=italic)
+![Header](https://capsule-render.vercel.app/api?type=venom&color=gradient&customColorList=12,20,30&height=300&section=header&text=ABDULMALEK%20ALGHAMDI&fontSize=70&fontColor=ffffff&animation=twinkling&fontAlignY=38&desc=System%20Architect%20×%20AI%20Engineer%20×%20Top%2010%25%20of%20Graduates&descAlignY=58&descSize=20&fontStyle=italic)
 
 </div>
 
@@ -28,8 +28,9 @@
 
 ```yaml
 name: Abdulmalek Alghamdi
-role: Computer Science & Engineering Senior
-university: University of Hafr Al-Batin (Class of 2026)
+role: Associate Product Manager @ T2
+background: Computer Science & Engineering (Class of 2026)
+university: University of Hafr Al-Batin
 location: Saudi Arabia 🇸🇦
 languages: [Arabic (Native), English (Professional)]
 current_focus:
@@ -160,7 +161,27 @@ fun_fact: I love translating ambiguous business needs into elegant code ✨
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🏢 Co-Op IT Business Analyst</h3>
+      <h3>🚀 Associate Product Manager</h3>
+      <p><b>T2</b> · Saudi Arabia</p>
+      <ul>
+        <li>Building RUIA, a real estate digital platform, from discovery to delivery</li>
+        <li>Owning roadmap, BRDs, and backlog prioritization in an Agile setup</li>
+        <li>Aligning engineering, design, and business stakeholders around outcomes</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🌐 Digital Product and Growth Intern</h3>
+      <p><b>Al-Rakeen</b> · Saudi Arabia</p>
+      <ul>
+        <li>Developed IoT-driven product features and integrations</li>
+        <li>Worked on connected systems and smart device ecosystems</li>
+        <li>Collaborated on product strategy and technical execution</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🏢 IT Business Analyst — Co-op</h3>
       <p><b>Channels by stc</b> · Saudi Arabia</p>
       <ul>
         <li>Translated complex business requirements into technical specifications</li>
@@ -169,13 +190,6 @@ fun_fact: I love translating ambiguous business needs into elegant code ✨
       </ul>
     </td>
     <td width="50%" valign="top">
-      <h3>🌐 Digital Products Intern (IoT)</h3>
-      <p><b>Al-Rakeen</b> · Saudi Arabia</p>
-      <ul>
-        <li>Developed IoT-driven product features and integrations</li>
-        <li>Worked on connected systems and smart device ecosystems</li>
-        <li>Collaborated on product strategy and technical execution</li>
-      </ul>
     </td>
   </tr>
 </table>
