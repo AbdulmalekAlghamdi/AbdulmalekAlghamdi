@@ -3,851 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdulmalek Alghamdi</title>
+<title>Abdulmalek Alghamdi — IT Business Analyst</title>
+<meta name="description" content="Abdulmalek Alghamdi — IT Business Analyst at SEET Agency, formerly Channels by stc. CS & Engineering graduate, Class of 2026, based in Saudi Arabia.">
+<meta property="og:title" content="Abdulmalek Alghamdi — IT Business Analyst">
+<meta property="og:description" content="IT Business Analyst at SEET Agency · formerly Channels by stc · CS&E Class of 2026.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f4f1ea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a1815'/%3E%3Ctext x='32' y='42' font-size='28' font-style='italic' text-anchor='middle' fill='%23f4f1ea' font-family='serif'%3EA.A%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Tajawal:wght@300;400;500;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script>try{if(sessionStorage.getItem('seen'))document.documentElement.classList.add('seen')}catch(e){}</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.loader{display:none!important}.uni-card{opacity:1!important;transform:none!important}</style></noscript>
 <style>
   :root {
-    --bg: #f4f1ea;
-    --bg-dark: #0d0c0a;
-    --ink: #1a1815;
-    --ink-soft: #3d3a35;
-    --ink-muted: #6b6862;
-    --paper: #ebe6dc;
-    --paper-dark: #1f1d19;
-    --accent: #c8451d;
-    --gold: #b8934d;
-    --line: rgba(26, 24, 21, 0.12);
-    --line-strong: rgba(26, 24, 21, 0.35);
+    --bg: #f4f1ea; --bg-dark: #0d0c0a; --ink: #1a1815; --ink-soft: #3d3a35; --ink-muted: #5f5c56;
+    --paper: #ebe6dc; --paper-dark: #1f1d19; --accent: #c8451d; --gold: #b8934d;
+    --line: rgba(26, 24, 21, 0.12); --line-strong: rgba(26, 24, 21, 0.35);
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-
   body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    cursor: none;
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-weight: 400;
+    line-height: 1.5; overflow-x: hidden; -webkit-font-smoothing: antialiased;
   }
   body.ar { font-family: 'Tajawal', sans-serif; }
   body.ar .italic, body.ar .arabic-serif { font-family: 'Amiri', serif; }
-  @media (hover: none) { body { cursor: auto; } }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (hover: hover) and (pointer: fine) { body, .lang-btn, .request-card { cursor: none; } }
 
   /* CURSOR */
-  .cursor {
-    position: fixed; width: 8px; height: 8px;
-    background: var(--accent); border-radius: 50%;
-    pointer-events: none; z-index: 10000;
-    transition: width 0.3s, height 0.3s, background 0.3s;
-    transform: translate(-50%, -50%); mix-blend-mode: difference;
-  }
-  .cursor-follower {
-    position: fixed; width: 36px; height: 36px;
-    border: 1px solid var(--ink); border-radius: 50%;
-    pointer-events: none; z-index: 9999;
-    transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
-    transform: translate(-50%, -50%);
-  }
+  .cursor { position: fixed; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; pointer-events: none; z-index: 10000; transition: width .3s, height .3s, background .3s; transform: translate(-50%, -50%); mix-blend-mode: difference; }
+  .cursor-follower { position: fixed; width: 36px; height: 36px; border: 1px solid var(--ink); border-radius: 50%; pointer-events: none; z-index: 9999; transition: width .3s, height .3s, border-color .3s, background .3s; transform: translate(-50%, -50%); }
   body.cursor-hover .cursor { width: 0; height: 0; }
-  body.cursor-hover .cursor-follower {
-    width: 64px; height: 64px;
-    background: var(--accent); border-color: var(--accent);
-    mix-blend-mode: difference;
-  }
-  @media (hover: none) { .cursor, .cursor-follower { display: none; } }
+  body.cursor-hover .cursor-follower { width: 64px; height: 64px; background: var(--accent); border-color: var(--accent); mix-blend-mode: difference; }
+  @media (hover: none), (pointer: coarse) { .cursor, .cursor-follower { display: none; } }
 
   /* LOADER */
-  .loader {
-    position: fixed; inset: 0;
-    background: var(--ink); z-index: 11000;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column;
-    transition: transform 1.2s cubic-bezier(0.76, 0, 0.24, 1);
-  }
+  .loader { position: fixed; inset: 0; background: var(--ink); z-index: 11000; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: transform 1.2s cubic-bezier(0.76, 0, 0.24, 1); }
   .loader.done { transform: translateY(-100%); }
-  .loader-quote {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--bg); opacity: 0.4;
-    font-size: clamp(14px, 1.4vw, 18px);
-    text-align: center; max-width: 480px;
-    margin-bottom: 40px; padding: 0 20px;
-    animation: fadeInSlow 1.5s ease-out 0.5s both;
-  }
+  .seen .loader { display: none; }
+  .loader-quote { font-style: italic; color: var(--bg); opacity: 0.4; font-size: clamp(14px, 1.4vw, 18px); text-align: center; max-width: 480px; margin-bottom: 40px; padding: 0 20px; animation: fadeInSlow 1.5s ease-out .5s both; }
   body.ar .loader-quote { font-family: 'Amiri', serif; font-size: clamp(15px, 1.5vw, 20px); }
-  .loader-text {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
-    font-size: clamp(48px, 8vw, 120px);
-    color: var(--bg); letter-spacing: -0.03em; overflow: hidden;
-  }
+  .loader-text { font-style: italic; font-weight: 500; font-size: clamp(48px, 8vw, 120px); color: var(--bg); letter-spacing: -0.03em; overflow: hidden; }
   body.ar .loader-text { font-family: 'Amiri', serif; font-weight: 700; }
-  .loader-text span {
-    display: inline-block;
-    animation: loaderUp 1.6s cubic-bezier(0.76, 0, 0.24, 1) forwards;
-  }
-  .loader-bar {
-    width: min(400px, 70vw); height: 1px;
-    background: rgba(244, 241, 234, 0.2);
-    margin-top: 40px; position: relative; overflow: hidden;
-  }
-  .loader-bar::after {
-    content: ''; position: absolute; left: 0; top: 0; height: 100%;
-    background: var(--accent);
-    animation: loaderBar 2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
-  }
-  .loader-count {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    color: var(--bg); opacity: 0.5;
-    margin-top: 16px; letter-spacing: 0.15em;
-  }
-  @keyframes loaderUp {
-    0% { transform: translateY(100%); opacity: 0; }
-    40%, 80% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-100%); opacity: 0; }
-  }
+  .loader-text span { display: inline-block; animation: loaderUp 1.6s cubic-bezier(0.76, 0, 0.24, 1) forwards; }
+  .loader-bar { width: min(400px, 70vw); height: 1px; background: rgba(244, 241, 234, 0.2); margin-top: 40px; position: relative; overflow: hidden; }
+  .loader-bar::after { content: ''; position: absolute; left: 0; top: 0; height: 100%; background: var(--accent); animation: loaderBar 2s cubic-bezier(0.76, 0, 0.24, 1) forwards; }
+  .loader-count { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bg); opacity: 0.5; margin-top: 16px; letter-spacing: 0.15em; }
+  @keyframes loaderUp { 0% { transform: translateY(100%); opacity: 0; } 40%, 80% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-100%); opacity: 0; } }
   @keyframes loaderBar { 0% { width: 0; } 100% { width: 100%; } }
   @keyframes fadeInSlow { from { opacity: 0; } to { opacity: 0.4; } }
 
-  .scroll-progress {
-    position: fixed; top: 0; left: 0;
-    height: 2px; background: var(--accent);
-    z-index: 200; width: 0; transition: width 0.1s linear;
-  }
-
-  body::before {
-    content: ''; position: fixed; inset: 0;
-    pointer-events: none; z-index: 9990; opacity: 0.05;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
+  .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 200; width: 0; transition: width .1s linear; }
+  body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9990; opacity: 0.05; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
   .container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
 
   /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100; padding: 24px 40px;
-    display: flex; justify-content: space-between; align-items: center;
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    background: rgba(244, 241, 234, 0.6);
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s;
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(244, 241, 234, 0.6); border-bottom: 1px solid transparent; transition: border-color .3s; }
   nav.scrolled { border-bottom-color: var(--line); }
-  .nav-logo {
-    font-family: 'Inter', sans-serif;
-    font-size: 24px; font-style: italic;
-    letter-spacing: -0.02em; text-decoration: none; color: var(--ink);
-  }
-  .nav-links {
-    display: flex; gap: 28px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.15em;
-  }
-  body.ar .nav-links {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 500;
-  }
-  .nav-links a {
-    color: var(--ink); text-decoration: none;
-    position: relative; padding: 4px 0; transition: color 0.3s;
-  }
-  .nav-links a::after {
-    content: ''; position: absolute; left: 0; bottom: 0;
-    width: 100%; height: 1px; background: var(--accent);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.3s;
-  }
+  .nav-logo { font-size: 24px; font-style: italic; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); }
+  .nav-links { display: flex; gap: 28px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; }
+  body.ar .nav-links { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 500; }
+  .nav-links a { color: var(--ink); text-decoration: none; position: relative; padding: 4px 0; transition: color .3s; }
+  .nav-links a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
   body.ar .nav-links a::after { transform-origin: right; }
   .nav-links a:hover { color: var(--accent); }
   .nav-links a:hover::after { transform: scaleX(1); }
-  .lang-switch {
-    display: flex; gap: 2px; padding: 4px;
-    border: 1px solid var(--line-strong); border-radius: 100px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
-  }
-
-  .nav-book {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.12em; font-weight: 500;
-    color: var(--bg); background: var(--accent);
-    text-decoration: none;
-    padding: 9px 18px; border-radius: 100px;
-    margin-left: auto; margin-right: 12px;
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    border: 1px solid var(--accent);
-  }
+  .lang-switch { display: flex; gap: 2px; padding: 4px; border: 1px solid var(--line-strong); border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .nav-book { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 500; color: var(--bg); background: var(--accent); text-decoration: none; padding: 9px 18px; border-radius: 100px; margin-left: auto; margin-right: 12px; transition: all .3s cubic-bezier(0.22, 1, 0.36, 1); border: 1px solid var(--accent); }
   body[dir="rtl"] .nav-book { margin-left: 12px; margin-right: auto; }
-  body.ar .nav-book {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 700;
-  }
-  .nav-book:hover {
-    background: var(--ink); border-color: var(--ink);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px -6px rgba(200, 69, 29, 0.4);
-  }
-  .nav-book-dot {
-    width: 6px; height: 6px;
-    background: var(--bg); border-radius: 50%;
-    animation: pulse 2s infinite;
-    flex-shrink: 0;
-  }
-  .lang-btn {
-    padding: 6px 14px; border-radius: 100px;
-    background: transparent; border: none;
-    color: var(--ink); cursor: none;
-    transition: all 0.3s ease;
-    font-family: inherit; font-size: inherit; font-weight: 500;
-  }
+  body.ar .nav-book { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 700; }
+  .nav-book:hover { background: var(--ink); border-color: var(--ink); transform: translateY(-1px); box-shadow: 0 8px 20px -6px rgba(200, 69, 29, 0.4); }
+  .nav-book-dot { width: 6px; height: 6px; background: var(--bg); border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+  .lang-btn { padding: 6px 14px; border-radius: 100px; background: transparent; border: none; color: var(--ink); transition: all .3s ease; font-family: inherit; font-size: inherit; font-weight: 500; }
   .lang-btn.active { background: var(--ink); color: var(--bg); }
+  .nav-toggle { display: none; }
 
   /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
-    position: relative; padding: 140px 0 80px;
-  }
-  .hero-meta {
-    display: flex; justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em;
-    color: var(--ink-muted); margin-bottom: 80px;
-  }
-  body.ar .hero-meta {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px; letter-spacing: 0; text-transform: none;
-  }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; padding: 140px 0 80px; }
+  .hero-meta { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); margin-bottom: 80px; }
+  body.ar .hero-meta { font-family: 'Tajawal', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; }
   .hero-meta span { display: flex; align-items: center; gap: 8px; }
-  .hero-meta .pulse::before {
-    content: ''; width: 6px; height: 6px;
-    background: var(--accent); border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-  .hero-title {
-    font-size: clamp(56px, 11vw, 200px);
-    font-weight: 300; line-height: 0.92;
-    letter-spacing: -0.04em; margin-bottom: 40px;
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  body.ar .hero-title {
-    font-family: 'Tajawal', sans-serif; font-weight: 700;
-    letter-spacing: -0.02em; line-height: 1;
-  }
-  .hero-title .italic {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; font-weight: 400;
-  }
-  body.ar .hero-title .italic {
-    font-family: 'Amiri', serif; font-style: italic; font-weight: 700;
-  }
+  .hero-meta .pulse::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+  .hero-title { font-size: clamp(56px, 11vw, 200px); font-weight: 300; line-height: 0.92; letter-spacing: -0.04em; margin-bottom: 40px; transition: transform .3s cubic-bezier(0.22, 1, 0.36, 1); }
+  body.ar .hero-title { font-family: 'Tajawal', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+  .hero-title .italic { font-style: italic; font-weight: 400; }
+  body.ar .hero-title .italic { font-family: 'Amiri', serif; font-weight: 700; }
   .hero-title .line { display: block; overflow: hidden; }
-  .hero-title .line > span {
-    display: inline-block;
-    animation: slideUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-delay: calc(var(--i) * 0.15s + 1.5s);
-  }
-  .hero-bottom {
-    display: grid; grid-template-columns: 1.2fr 1fr;
-    gap: 80px; margin-top: 60px; padding-top: 32px;
-    border-top: 1px solid var(--line);
-    animation: fadeIn 1s ease-out 2.5s both;
-  }
-  .hero-description {
-    font-size: 22px; line-height: 1.55;
-    color: var(--ink-soft); max-width: 580px; font-weight: 400;
-  }
+  .hero-title .line > span { display: inline-block; animation: slideUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: calc(var(--i) * 0.15s + 1.5s); }
+  .seen .hero-title .line > span { animation-delay: calc(var(--i) * 0.15s + 0.1s); }
+  .hero-bottom { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--line); animation: fadeIn 1s ease-out 2.5s both; }
+  .seen .hero-bottom { animation-delay: .5s; }
+  .hero-description { font-size: 22px; line-height: 1.55; color: var(--ink-soft); max-width: 580px; }
   body.ar .hero-description { font-size: 20px; line-height: 1.8; }
-  .hero-description em {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
-  body.ar .hero-description em {
-    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
-  }
-  .hero-location {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em;
-    color: var(--ink-muted);
-    display: flex; flex-direction: column; gap: 6px; align-self: end;
-  }
-  body.ar .hero-location {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px; letter-spacing: 0; text-transform: none;
-  }
+  .hero-description em { font-style: italic; color: var(--accent); }
+  body.ar .hero-description em { font-family: 'Amiri', serif; font-weight: 700; }
+  .hero-location { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); display: flex; flex-direction: column; gap: 6px; align-self: end; }
+  body.ar .hero-location { font-family: 'Tajawal', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; }
   .hero-location strong { color: var(--ink); font-weight: 500; }
-  .hero-scroll-hint {
-    position: absolute; bottom: 40px; left: 50%;
-    transform: translateX(-50%);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
-    color: var(--ink-muted);
-    animation: fadeIn 1s ease-out 3s both, bounce 2s infinite 3.5s;
-  }
-  body.ar .hero-scroll-hint {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0; text-transform: none;
-  }
+  .hero-scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--ink-muted); animation: fadeIn 1s ease-out 3s both, bounce 2s infinite 3.5s; }
+  body.ar .hero-scroll-hint { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; }
 
   /* MANIFESTO */
-  .manifesto {
-    background: var(--ink); color: var(--bg);
-    padding: 180px 0; position: relative; overflow: hidden;
-  }
-  .manifesto::before {
-    content: '✦'; position: absolute;
-    top: 50%; left: 50%; transform: translate(-50%, -50%);
-    font-size: 600px; color: rgba(200, 69, 29, 0.05);
-    line-height: 1; pointer-events: none; font-family: serif;
-  }
-  .manifesto-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.3em; color: var(--accent);
-    text-align: center; margin-bottom: 48px; position: relative; z-index: 2;
-  }
-  body.ar .manifesto-label {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px; letter-spacing: 0.1em; text-transform: none; font-weight: 500;
-  }
-  .manifesto-text {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
-    font-size: clamp(32px, 5vw, 68px);
-    line-height: 1.25; text-align: center;
-    max-width: 1100px; margin: 0 auto;
-    letter-spacing: -0.02em;
-    position: relative; z-index: 2;
-  }
-  body.ar .manifesto-text {
-    font-family: 'Amiri', serif; font-weight: 400; line-height: 1.5;
-  }
+  .manifesto { background: var(--ink); color: var(--bg); padding: 180px 0; position: relative; overflow: hidden; }
+  .manifesto::before { content: '✦'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 600px; color: rgba(200, 69, 29, 0.05); line-height: 1; pointer-events: none; font-family: serif; }
+  .manifesto-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); text-align: center; margin-bottom: 48px; position: relative; z-index: 2; }
+  body.ar .manifesto-label { font-family: 'Tajawal', sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: none; font-weight: 500; }
+  .manifesto-text { font-style: italic; font-weight: 500; font-size: clamp(32px, 5vw, 68px); line-height: 1.25; text-align: center; max-width: 1100px; margin: 0 auto; letter-spacing: -0.02em; position: relative; z-index: 2; }
+  body.ar .manifesto-text { font-family: 'Amiri', serif; font-weight: 400; line-height: 1.5; }
   .manifesto-text .accent { color: var(--accent); font-style: italic; }
   .manifesto-text .strike { position: relative; opacity: 0.55; }
-  .manifesto-text .strike::after {
-    content: ''; position: absolute;
-    top: 55%; left: -6px; right: -6px; height: 3px;
-    background: var(--accent); transform: rotate(-2deg);
-  }
-  .manifesto-sig {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.2em; color: rgba(244, 241, 234, 0.5);
-    text-align: center; margin-top: 64px; position: relative; z-index: 2;
-  }
-  body.ar .manifesto-sig {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px; letter-spacing: 0; text-transform: none;
-  }
+  .manifesto-text .strike::after { content: ''; position: absolute; top: 55%; left: -6px; right: -6px; height: 3px; background: var(--accent); transform: rotate(-2deg); }
+  .manifesto-sig { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(244, 241, 234, 0.5); text-align: center; margin-top: 64px; position: relative; z-index: 2; }
+  body.ar .manifesto-sig { font-family: 'Tajawal', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; }
 
   /* MARQUEE */
-  .marquee {
-    background: var(--bg); color: var(--ink);
-    padding: 28px 0; overflow: hidden; white-space: nowrap;
-    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line);
-  }
-  .marquee-track {
-    display: inline-flex; gap: 60px;
-    animation: scroll 40s linear infinite;
-    font-family: 'Inter', sans-serif;
-    font-style: italic; font-size: 42px;
-  }
-  body.ar .marquee-track {
-    font-family: 'Amiri', serif; font-weight: 400;
-    font-size: 36px; animation-direction: reverse;
-  }
+  .marquee { background: var(--bg); color: var(--ink); padding: 28px 0; overflow: hidden; white-space: nowrap; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+  .marquee-track { display: inline-flex; gap: 60px; animation: scroll 40s linear infinite; font-style: italic; font-size: 42px; }
+  body.ar .marquee-track { font-family: 'Amiri', serif; font-weight: 400; font-size: 36px; animation-direction: reverse; }
   .marquee-track span { display: flex; align-items: center; gap: 60px; }
-  .marquee-track span::after {
-    content: '✦'; font-size: 24px;
-    color: var(--accent); font-style: normal;
-  }
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+  .marquee-track span::after { content: '✦'; font-size: 24px; color: var(--accent); font-style: normal; }
+  @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
   /* METRICS */
   .metrics { padding: 140px 0; background: var(--bg); }
-  .metrics-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.3em; color: var(--accent);
-    text-align: center; margin-bottom: 32px;
-  }
-  body.ar .metrics-label {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px; letter-spacing: 0.1em; text-transform: none; font-weight: 500;
-  }
-  .metrics-title {
-    font-size: clamp(40px, 6vw, 96px);
-    font-weight: 300; line-height: 1.05;
-    letter-spacing: -0.03em; text-align: center;
-    margin-bottom: 100px; max-width: 980px;
-    margin-left: auto; margin-right: auto;
-  }
-  body.ar .metrics-title {
-    font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.2;
-  }
-  .metrics-title .italic {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
-  body.ar .metrics-title .italic {
-    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
-  }
-  .metrics-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 1px; background: var(--line);
-    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  }
-  .metric {
-    background: var(--bg); padding: 56px 36px;
-    text-align: center; transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative; overflow: hidden;
-  }
-  .metric::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: var(--accent);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s;
-  }
+  .metrics-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); text-align: center; margin-bottom: 32px; }
+  body.ar .metrics-label { font-family: 'Tajawal', sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: none; font-weight: 500; }
+  .metrics-title { font-size: clamp(40px, 6vw, 96px); font-weight: 300; line-height: 1.05; letter-spacing: -0.03em; text-align: center; margin: 0 auto 100px; max-width: 980px; }
+  body.ar .metrics-title { font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.2; }
+  .metrics-title .italic { font-style: italic; color: var(--accent); }
+  body.ar .metrics-title .italic { font-family: 'Amiri', serif; font-weight: 700; }
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .metrics-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+  .metric { background: var(--bg); padding: 56px 36px; text-align: center; transition: all .4s cubic-bezier(0.22, 1, 0.36, 1); position: relative; overflow: hidden; }
+  .metric::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
   body[dir="rtl"] .metric::before { transform-origin: right; }
   .metric:hover { background: var(--paper); }
   .metric:hover::before { transform: scaleX(1); }
-  .metric-number {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; font-size: clamp(64px, 8vw, 120px);
-    line-height: 1; color: var(--ink);
-    letter-spacing: -0.03em; margin-bottom: 16px;
-    display: flex; justify-content: center; align-items: baseline; gap: 4px;
-  }
+  .metric-number { font-style: italic; font-size: clamp(64px, 8vw, 120px); line-height: 1; color: var(--ink); letter-spacing: -0.03em; margin-bottom: 16px; display: flex; justify-content: center; align-items: baseline; gap: 4px; }
   .metric-suffix { font-size: 0.4em; color: var(--accent); font-style: italic; }
-  .metric-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase;
-    letter-spacing: 0.15em; color: var(--ink-muted);
-    line-height: 1.5;
-  }
-  body.ar .metric-label {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 500;
-  }
-  .metrics-grid-2 {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 1px; background: var(--line);
-    border-bottom: 1px solid var(--line);
-  }
+  .metric-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); line-height: 1.5; }
+  body.ar .metric-label { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 500; }
 
   /* SECTION */
   .section { padding: 140px 0; position: relative; }
-  .section-header {
-    display: grid; grid-template-columns: 1fr 3fr;
-    gap: 60px; margin-bottom: 80px;
-    padding-bottom: 40px; border-bottom: 1px solid var(--line);
-  }
-  .section-number {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.15em; color: var(--ink-muted);
-  }
-  body.ar .section-number {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 500;
-  }
-  .section-title {
-    font-size: clamp(40px, 5.5vw, 84px);
-    font-weight: 300; line-height: 1; letter-spacing: -0.03em;
-  }
-  body.ar .section-title {
-    font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.15;
-  }
-  .section-title .italic { font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; }
-  body.ar .section-title .italic {
-    font-family: 'Amiri', serif; font-style: italic;
-    font-weight: 700; color: var(--accent);
-  }
+  .section-header { display: grid; grid-template-columns: 1fr 3fr; gap: 60px; margin-bottom: 80px; padding-bottom: 40px; border-bottom: 1px solid var(--line); }
+  .section-number { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); }
+  body.ar .section-number { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 500; }
+  .section-title { font-size: clamp(40px, 5.5vw, 84px); font-weight: 300; line-height: 1; letter-spacing: -0.03em; }
+  body.ar .section-title { font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.15; }
+  .section-title .italic { font-style: italic; font-weight: 500; }
+  body.ar .section-title .italic { font-family: 'Amiri', serif; font-weight: 700; color: var(--accent); }
 
   /* ABOUT */
-  .about-grid {
-    display: grid; grid-template-columns: 1.1fr 1fr;
-    gap: 80px; align-items: start;
-  }
+  .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: start; }
   .about-text { font-size: 22px; line-height: 1.65; color: var(--ink-soft); }
   body.ar .about-text { font-size: 20px; line-height: 1.9; }
   .about-text p + p { margin-top: 24px; }
-  .about-text em {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
-  body.ar .about-text em {
-    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
-  }
-  .about-identity {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    padding: 40px 32px; position: sticky; top: 100px;
-  }
-  .about-identity-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
-    color: var(--accent); margin-bottom: 20px;
-  }
-  body.ar .about-identity-label {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 700;
-  }
-  .identity-row {
-    padding: 18px 0; border-bottom: 1px solid var(--line);
-    display: flex; justify-content: space-between; align-items: baseline;
-    gap: 16px;
-  }
+  .about-text em { font-style: italic; color: var(--accent); }
+  body.ar .about-text em { font-family: 'Amiri', serif; font-weight: 700; }
+  .about-identity { background: var(--paper); border: 1px solid var(--line); padding: 40px 32px; position: sticky; top: 100px; }
+  .about-identity-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 20px; }
+  body.ar .about-identity-label { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 700; }
+  .identity-row { padding: 18px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
   .identity-row:last-child { border-bottom: none; }
-  .identity-key {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase;
-    letter-spacing: 0.15em; color: var(--ink-muted);
-    flex-shrink: 0;
-  }
-  body.ar .identity-key {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0; text-transform: none;
-  }
-  .identity-val {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; font-size: 20px;
-    color: var(--ink); text-align: right;
-  }
-  body.ar .identity-val {
-    font-family: 'Amiri', serif; font-weight: 700; text-align: left;
-  }
+  .identity-key { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); flex-shrink: 0; }
+  body.ar .identity-key { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; }
+  .identity-val { font-style: italic; font-size: 20px; color: var(--ink); text-align: right; }
+  body.ar .identity-val { font-family: 'Amiri', serif; font-weight: 700; text-align: left; }
   .identity-val .accent { color: var(--accent); }
 
-  /* JOURNEY */
-  .journey-section { background: var(--paper); }
-  .journey {
-    max-width: 900px; margin: 0 auto;
-    padding: 20px 0; position: relative;
-  }
-  .journey-row {
-    display: grid; grid-template-columns: 180px 1fr;
-    gap: 64px; padding: 56px 0;
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative;
-  }
-  .journey-year {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; font-size: 88px;
-    line-height: 0.95; color: var(--accent);
-    letter-spacing: -0.03em;
-    align-self: start;
-  }
-  .journey-content h3 {
-    font-size: 28px; font-weight: 400;
-    letter-spacing: -0.02em; line-height: 1.25;
-    margin-bottom: 14px; color: var(--ink);
-  }
-  body.ar .journey-content h3 {
-    font-family: 'Tajawal', sans-serif; font-weight: 700;
-  }
-  .journey-content h3 .italic {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; color: var(--accent);
-  }
-  body.ar .journey-content h3 .italic {
-    font-family: 'Amiri', serif; font-weight: 700;
-  }
-  .journey-tag {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase;
-    letter-spacing: 0.2em; color: var(--accent);
-    margin-bottom: 14px; font-weight: 500;
-    padding: 4px 10px;
-    border: 1px solid var(--accent);
-  }
-  body.ar .journey-tag {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 700;
-  }
-  .journey-desc {
-    font-size: 16px; line-height: 1.7;
-    color: var(--ink-soft); max-width: 620px;
-  }
-  body.ar .journey-desc { font-size: 16px; line-height: 1.9; }
-  .journey-desc em {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
-  body.ar .journey-desc em {
-    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
-  }
-
   /* EXPERIENCE */
-  .experience-item {
-    display: grid; grid-template-columns: 200px 1fr auto;
-    gap: 40px; padding: 56px 0;
-    border-bottom: 1px solid var(--line);
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative;
-  }
+  .experience-item { display: grid; grid-template-columns: 200px 1fr auto; gap: 40px; padding: 56px 0; border-bottom: 1px solid var(--line); transition: all .5s cubic-bezier(0.22, 1, 0.36, 1); position: relative; }
   .experience-item:first-child { border-top: 1px solid var(--line); }
-  .experience-item::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; width: 0; height: 100%;
-    background: var(--paper);
-    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    z-index: -1;
-  }
+  .experience-item::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 100%; background: var(--paper); transition: width .5s cubic-bezier(0.22, 1, 0.36, 1); z-index: -1; }
   .experience-item:hover::before { width: 100%; }
   .experience-item:hover { padding-left: 32px; padding-right: 32px; }
-  .exp-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.15em; color: var(--ink-muted); padding-top: 8px;
-  }
-  body.ar .exp-date {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px; letter-spacing: 0;
-    text-transform: none; font-weight: 500;
-  }
-  .exp-content h3 {
-    font-size: 34px; font-weight: 400;
-    letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2;
-  }
+  .exp-date { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); padding-top: 8px; }
+  body.ar .exp-date { font-family: 'Tajawal', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; font-weight: 500; }
+  .exp-content h3 { font-size: 34px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
   body.ar .exp-content h3 { font-family: 'Tajawal', sans-serif; font-weight: 700; }
-  .exp-content h3 .company {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
-  body.ar .exp-content h3 .company {
-    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
-  }
-  .exp-desc {
-    font-size: 17px; color: var(--ink-soft);
-    line-height: 1.65; margin-top: 16px; max-width: 680px;
-  }
-  body.ar .exp-desc { font-size: 17px; line-height: 1.9; }
-  .exp-desc em {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
-  body.ar .exp-desc em {
-    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
-  }
+  .exp-content h3 .company { font-style: italic; color: var(--accent); }
+  body.ar .exp-content h3 .company { font-family: 'Amiri', serif; font-weight: 700; }
+  .exp-desc { font-size: 17px; color: var(--ink-soft); line-height: 1.65; margin-top: 16px; max-width: 680px; }
+  body.ar .exp-desc { line-height: 1.9; }
+  .exp-desc em { font-style: italic; color: var(--accent); }
+  body.ar .exp-desc em { font-family: 'Amiri', serif; font-weight: 700; }
+  .exp-list { list-style: none; margin-top: 16px; max-width: 680px; }
+  .exp-list li { position: relative; padding-inline-start: 22px; font-size: 17px; line-height: 1.65; color: var(--ink-soft); margin-top: 10px; }
+  body.ar .exp-list li { line-height: 1.9; }
+  .exp-list li::before { content: '✦'; position: absolute; inset-inline-start: 0; top: 0; font-size: 11px; line-height: 2.4; color: var(--accent); }
   .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-  .exp-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
-    padding: 5px 11px; border: 1px solid var(--line-strong);
-    color: var(--ink-soft); transition: all 0.3s;
-  }
-  body.ar .exp-tag {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 12px; letter-spacing: 0;
-    text-transform: none; font-weight: 500;
-  }
+  .exp-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; padding: 5px 11px; border: 1px solid var(--line-strong); color: var(--ink-soft); transition: all .3s; }
+  body.ar .exp-tag { font-family: 'Tajawal', sans-serif; font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 500; }
   .exp-tag:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .exp-arrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 36px; color: var(--ink-muted);
-    transition: transform 0.4s, color 0.3s; align-self: center;
-  }
+  .exp-arrow { font-size: 36px; color: var(--ink-muted); transition: transform .4s, color .3s; align-self: center; }
   body[dir="rtl"] .exp-arrow { transform: scaleX(-1); }
-  .experience-item:hover .exp-arrow {
-    transform: translateX(12px); color: var(--accent);
-  }
-  body[dir="rtl"] .experience-item:hover .exp-arrow {
-    transform: translateX(-12px) scaleX(-1);
-  }
+  .experience-item:hover .exp-arrow { transform: translateX(12px); color: var(--accent); }
+  body[dir="rtl"] .experience-item:hover .exp-arrow { transform: translateX(-12px) scaleX(-1); }
 
   /* CAPSTONE */
-  .capstone-card {
-    background: var(--bg-dark); color: var(--bg);
-    padding: 100px; position: relative; overflow: hidden;
-    border: 1px solid var(--ink);
-  }
-  .capstone-card::before {
-    content: 'HUMEX'; position: absolute;
-    bottom: -60px; right: -60px;
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
-    font-size: 320px; color: rgba(200, 69, 29, 0.08);
-    line-height: 1; letter-spacing: -0.04em;
-    pointer-events: none; font-weight: 400;
-  }
+  .capstone-card { background: var(--bg-dark); color: var(--bg); padding: 100px; position: relative; overflow: hidden; border: 1px solid var(--ink); }
+  .capstone-card::before { content: 'HUMEX'; position: absolute; bottom: -60px; right: -60px; font-style: italic; font-weight: 400; font-size: 320px; color: rgba(200, 69, 29, 0.08); line-height: 1; letter-spacing: -0.04em; pointer-events: none; }
   body[dir="rtl"] .capstone-card::before { right: auto; left: -60px; }
-  .capstone-badge-row {
-    display: flex; flex-wrap: wrap; gap: 8px;
-    margin-bottom: 48px; position: relative; z-index: 2;
-  }
-  .capstone-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em;
-    padding: 7px 14px; border: 1px solid rgba(244, 241, 234, 0.25);
-    color: rgba(244, 241, 234, 0.85);
-  }
-  body.ar .capstone-tag {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 12px; letter-spacing: 0;
-    text-transform: none; font-weight: 500;
-  }
-  .capstone-tag-accent {
-    background: var(--accent); border-color: var(--accent);
-    color: var(--bg); font-weight: 500;
-  }
-  .capstone-title {
-    font-size: clamp(72px, 14vw, 220px);
-    font-weight: 300; line-height: 0.92;
-    letter-spacing: -0.05em; margin-bottom: 24px;
-    position: relative; z-index: 2;
-  }
+  .capstone-badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 48px; position: relative; z-index: 2; }
+  .capstone-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; padding: 7px 14px; border: 1px solid rgba(244, 241, 234, 0.25); color: rgba(244, 241, 234, 0.85); }
+  body.ar .capstone-tag { font-family: 'Tajawal', sans-serif; font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 500; }
+  .capstone-tag-accent { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 500; }
+  .capstone-title { font-size: clamp(72px, 14vw, 220px); font-weight: 300; line-height: 0.92; letter-spacing: -0.05em; margin-bottom: 24px; position: relative; z-index: 2; }
   body.ar .capstone-title { font-family: 'Tajawal', sans-serif; font-weight: 900; }
-  .capstone-subtitle {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
-    font-size: clamp(24px, 2.6vw, 36px);
-    margin-bottom: 56px; opacity: 0.8;
-    max-width: 780px; line-height: 1.4;
-    position: relative; z-index: 2;
-  }
+  .capstone-subtitle { font-style: italic; font-weight: 500; font-size: clamp(24px, 2.6vw, 36px); margin-bottom: 56px; opacity: 0.8; max-width: 780px; line-height: 1.4; position: relative; z-index: 2; }
   body.ar .capstone-subtitle { font-family: 'Amiri', serif; font-weight: 400; }
   .capstone-subtitle em { color: var(--accent); font-style: italic; }
-  .capstone-body {
-    max-width: 760px; font-size: 18px;
-    line-height: 1.75; opacity: 0.9;
-    margin-bottom: 64px; position: relative; z-index: 2;
-  }
-  body.ar .capstone-body {
-    font-family: 'Tajawal', sans-serif; font-size: 18px; line-height: 1.9;
-  }
+  .capstone-body { max-width: 760px; font-size: 18px; line-height: 1.75; opacity: 0.9; margin-bottom: 64px; position: relative; z-index: 2; }
+  body.ar .capstone-body { font-family: 'Tajawal', sans-serif; line-height: 1.9; }
   .capstone-body p + p { margin-top: 20px; }
-  .capstone-body em {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
+  .capstone-body em { font-style: italic; color: var(--accent); }
   body.ar .capstone-body em { font-family: 'Amiri', serif; font-weight: 700; }
-  .capstone-meta-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 1px; background: rgba(244, 241, 234, 0.15);
-    border: 1px solid rgba(244, 241, 234, 0.15);
-    position: relative; z-index: 2;
-  }
-  .capstone-meta-item {
-    background: var(--bg-dark); padding: 28px 32px;
-    transition: background 0.3s;
-  }
+  .capstone-meta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(244, 241, 234, 0.15); border: 1px solid rgba(244, 241, 234, 0.15); position: relative; z-index: 2; }
+  .capstone-meta-item { background: var(--bg-dark); padding: 28px 32px; transition: background .3s; }
   .capstone-meta-item:hover { background: var(--paper-dark); }
-  .capstone-meta-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em;
-    opacity: 0.5; margin-bottom: 10px;
-  }
-  body.ar .capstone-meta-label {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0; text-transform: none;
-  }
+  .capstone-meta-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.6; margin-bottom: 10px; }
+  body.ar .capstone-meta-label { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; }
   .capstone-meta-value { font-size: 16px; line-height: 1.5; }
 
   /* UNIVERSITY PROJECTS */
-  .university-intro {
-    font-size: 20px; line-height: 1.6; color: var(--ink-soft);
-    max-width: 780px; margin-bottom: 64px;
-  }
-  body.ar .university-intro { font-size: 19px; line-height: 1.9; }
-  .university-intro em {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
-  body.ar .university-intro em { font-family: 'Amiri', serif; font-weight: 700; }
   .uni-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-
-  /* UNI CARDS SCROLL PARALLAX */
-  .uni-card {
-    padding: 40px 36px; background: var(--paper);
-    border: 1px solid var(--line);
-    --reveal-y: 70px;
-    --parallax-y: 0px;
-    transform: translateY(var(--reveal-y));
-    opacity: 0;
-    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-                opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                background 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative; overflow: hidden;
-    will-change: transform;
-  }
-  .uni-card.card-visible {
-    opacity: 1;
-    --reveal-y: 0px;
-    transform: translateY(var(--parallax-y));
-  }
-  .uni-card:nth-child(1) { transition-delay: 0s; }
-  .uni-card:nth-child(2) { transition-delay: 0.08s; }
-  .uni-card:nth-child(3) { transition-delay: 0.16s; }
-  .uni-card:nth-child(4) { transition-delay: 0.24s; }
-  .uni-card:nth-child(5) { transition-delay: 0.32s; }
-
-
-  .uni-card::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; width: 3px; height: 100%;
-    background: var(--accent);
-    transform: scaleY(0); transform-origin: top;
-    transition: transform 0.4s ease;
-  }
+  .uni-card { padding: 40px 36px; background: var(--paper); border: 1px solid var(--line); transform: translateY(70px); opacity: 0; transition: transform .9s cubic-bezier(0.22, 1, 0.36, 1), opacity .8s cubic-bezier(0.22, 1, 0.36, 1), background .4s, box-shadow .4s; position: relative; overflow: hidden; will-change: transform; }
+  .uni-card.card-visible { opacity: 1; transform: translateY(0); }
+  .uni-card.settled { transition: opacity .8s, background .4s, box-shadow .4s; }
+  .uni-card:nth-child(2) { transition-delay: .08s; } .uni-card:nth-child(3) { transition-delay: .16s; } .uni-card:nth-child(4) { transition-delay: .24s; } .uni-card:nth-child(5) { transition-delay: .32s; }
+  .uni-card.settled { transition-delay: 0s; }
+  .uni-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform .4s ease; }
   body[dir="rtl"] .uni-card::before { left: auto; right: 0; }
   .uni-card:hover::before { transform: scaleY(1); }
-  .uni-card:hover {
-    background: var(--bg);
-    box-shadow: 0 30px 50px -20px rgba(26, 24, 21, 0.18);
-  }
-  .uni-header {
-    display: flex; justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em;
-    color: var(--ink-muted); margin-bottom: 24px;
-    padding-bottom: 18px; border-bottom: 1px solid var(--line);
-  }
-  body.ar .uni-header {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 500;
-  }
+  .uni-card:hover { background: var(--bg); box-shadow: 0 30px 50px -20px rgba(26, 24, 21, 0.18); }
+  .uni-header { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+  body.ar .uni-header { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 500; }
   .uni-course { color: var(--accent); font-weight: 600; }
-  .uni-title {
-    font-size: 26px; font-weight: 400;
-    letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 8px;
-  }
+  .uni-title { font-size: 26px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 8px; }
   body.ar .uni-title { font-family: 'Tajawal', sans-serif; font-weight: 700; }
-  .uni-title .italic {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; color: var(--ink-muted);
-  }
+  .uni-title .italic { font-style: italic; font-weight: 500; color: var(--ink-muted); }
   body.ar .uni-title .italic { font-family: 'Amiri', serif; font-weight: 400; }
-  .uni-course-name {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
-    font-size: 15px; color: var(--ink-muted); margin-bottom: 18px;
-  }
-  body.ar .uni-course-name { font-family: 'Amiri', serif; font-size: 16px; }
-  .uni-desc {
-    font-size: 15px; line-height: 1.65;
-    color: var(--ink-soft); margin-bottom: 22px;
-  }
+  .uni-desc { font-size: 15px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 22px; }
   body.ar .uni-desc { line-height: 1.9; }
-  .uni-desc em {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
+  .uni-desc em { font-style: italic; color: var(--accent); }
   body.ar .uni-desc em { font-family: 'Amiri', serif; font-weight: 700; }
   .uni-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .uni-tags .exp-tag { padding: 4px 10px; font-size: 9px; }
@@ -855,608 +256,195 @@
 
   /* HACKATHONS */
   .hackathons-list { display: flex; flex-direction: column; }
-  .hack-item {
-    display: grid; grid-template-columns: 160px 1fr;
-    gap: 48px; padding: 56px 0;
-    border-bottom: 1px solid var(--line);
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative;
-  }
+  .hack-item { display: grid; grid-template-columns: 160px 1fr; gap: 48px; padding: 56px 0; border-bottom: 1px solid var(--line); transition: all .4s cubic-bezier(0.22, 1, 0.36, 1); position: relative; }
   .hack-item:first-child { border-top: 1px solid var(--line); }
-  .hack-item::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; width: 0; height: 100%;
-    background: var(--paper);
-    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    z-index: -1;
-  }
+  .hack-item::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 100%; background: var(--paper); transition: width .5s cubic-bezier(0.22, 1, 0.36, 1); z-index: -1; }
   .hack-item:hover::before { width: 100%; }
   .hack-item:hover { padding-left: 32px; padding-right: 32px; }
-  .hack-year {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
-    font-size: 72px; line-height: 1;
-    color: var(--accent); letter-spacing: -0.02em;
-  }
+  .hack-year { font-style: italic; font-weight: 500; font-size: 72px; line-height: 1; color: var(--accent); letter-spacing: -0.02em; }
   .hack-result { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
   .hack-medal { font-size: 22px; }
-  .hack-place {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.15em; color: var(--accent); font-weight: 500;
-  }
-  body.ar .hack-place {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px; letter-spacing: 0;
-    text-transform: none; font-weight: 700;
-  }
-  .hack-name {
-    font-size: 30px; font-weight: 400;
-    letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 14px;
-  }
+  .hack-place { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); font-weight: 500; }
+  body.ar .hack-place { font-family: 'Tajawal', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; font-weight: 700; }
+  .hack-name { font-size: 30px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 14px; }
   body.ar .hack-name { font-family: 'Tajawal', sans-serif; font-weight: 700; }
-  .hack-name .italic {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; color: var(--ink-muted);
-  }
+  .hack-name .italic { font-style: italic; font-weight: 500; color: var(--ink-muted); }
   body.ar .hack-name .italic { font-family: 'Amiri', serif; }
-  .hack-desc {
-    font-size: 17px; color: var(--ink-soft);
-    line-height: 1.65; max-width: 720px; margin-bottom: 20px;
-  }
+  .hack-desc { font-size: 17px; color: var(--ink-soft); line-height: 1.65; max-width: 720px; margin-bottom: 20px; }
   body.ar .hack-desc { line-height: 1.9; }
-  .hack-desc em {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
+  .hack-desc em { font-style: italic; color: var(--accent); }
   body.ar .hack-desc em { font-family: 'Amiri', serif; font-weight: 700; }
   .hack-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
   /* ARSENAL */
-  .arsenal-intro {
-    text-align: center; max-width: 720px;
-    margin: -20px auto 80px;
-    font-family: 'Inter', sans-serif;
-    font-style: italic; font-size: 24px;
-    color: var(--ink-soft); line-height: 1.5;
-  }
-  body.ar .arsenal-intro {
-    font-family: 'Amiri', serif; font-size: 22px; line-height: 1.8;
-  }
+  .arsenal-intro { text-align: center; max-width: 720px; margin: -20px auto 80px; font-style: italic; font-size: 24px; color: var(--ink-soft); line-height: 1.5; }
+  body.ar .arsenal-intro { font-family: 'Amiri', serif; font-size: 22px; line-height: 1.8; }
   .arsenal-intro .accent { color: var(--accent); }
-
-  .arsenal {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 24px; position: relative;
-  }
-  .arsenal-column {
-    background: var(--ink); color: var(--bg);
-    padding: 48px 40px 44px;
-    position: relative; overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
+  .arsenal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; }
+  .arsenal-column { background: var(--ink); color: var(--bg); padding: 48px 40px 44px; position: relative; overflow: hidden; transition: transform .6s cubic-bezier(0.22, 1, 0.36, 1); }
   .arsenal-column:hover { transform: translateY(-8px); }
-  .arsenal-column::before {
-    content: ''; position: absolute;
-    top: 0; right: 0;
-    width: 120px; height: 120px;
-    background: radial-gradient(circle at top right, rgba(200, 69, 29, 0.35) 0%, transparent 65%);
-    opacity: 0; transition: opacity 0.5s ease;
-    pointer-events: none;
-  }
+  .arsenal-column::before { content: ''; position: absolute; top: 0; right: 0; width: 120px; height: 120px; background: radial-gradient(circle at top right, rgba(200, 69, 29, 0.35) 0%, transparent 65%); opacity: 0; transition: opacity .5s ease; pointer-events: none; }
   .arsenal-column:hover::before { opacity: 1; }
-  .arsenal-column::after {
-    content: attr(data-index);
-    position: absolute;
-    bottom: -40px; right: -20px;
-    font-family: 'Inter', sans-serif;
-    font-style: italic;
-    font-size: 280px; line-height: 1;
-    color: rgba(244, 241, 234, 0.04);
-    letter-spacing: -0.05em;
-    pointer-events: none;
-    transition: color 0.5s ease, transform 0.6s ease;
-  }
+  .arsenal-column::after { content: attr(data-index); position: absolute; bottom: -40px; right: -20px; font-style: italic; font-size: 280px; line-height: 1; color: rgba(244, 241, 234, 0.04); letter-spacing: -0.05em; pointer-events: none; transition: color .5s ease, transform .6s ease; }
   body[dir="rtl"] .arsenal-column::after { right: auto; left: -20px; }
-  .arsenal-column:hover::after {
-    color: rgba(200, 69, 29, 0.12);
-    transform: scale(1.08);
-  }
-  .arsenal-header {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    padding-bottom: 20px; margin-bottom: 28px;
-    border-bottom: 1px solid rgba(244, 241, 234, 0.15);
-    position: relative; z-index: 2;
-  }
-  .arsenal-kicker {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px; text-transform: uppercase;
-    letter-spacing: 0.3em; color: var(--accent);
-    margin-bottom: 12px; font-weight: 500;
-  }
-  body.ar .arsenal-kicker {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 12px; letter-spacing: 0.1em;
-    text-transform: none; font-weight: 700;
-  }
-  .arsenal-title {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; font-size: 36px;
-    line-height: 1.05; letter-spacing: -0.02em;
-    color: var(--bg);
-  }
-  body.ar .arsenal-title {
-    font-family: 'Amiri', serif; font-weight: 700;
-    font-size: 32px;
-  }
-  .arsenal-count {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; color: rgba(244, 241, 234, 0.4);
-    letter-spacing: 0.15em; text-align: right;
-    padding-top: 6px; flex-shrink: 0;
-  }
+  .arsenal-column:hover::after { color: rgba(200, 69, 29, 0.12); transform: scale(1.08); }
+  .arsenal-header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid rgba(244, 241, 234, 0.15); position: relative; z-index: 2; }
+  .arsenal-kicker { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 12px; font-weight: 500; }
+  body.ar .arsenal-kicker { font-family: 'Tajawal', sans-serif; font-size: 12px; letter-spacing: 0.1em; text-transform: none; font-weight: 700; }
+  .arsenal-title { font-style: italic; font-size: 36px; line-height: 1.05; letter-spacing: -0.02em; color: var(--bg); }
+  body.ar .arsenal-title { font-family: 'Amiri', serif; font-weight: 700; font-size: 32px; }
+  .arsenal-count { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(244, 241, 234, 0.55); letter-spacing: 0.15em; text-align: right; padding-top: 6px; flex-shrink: 0; }
   body[dir="rtl"] .arsenal-count { text-align: left; }
-  .arsenal-list {
-    list-style: none; position: relative; z-index: 2;
-  }
-  .arsenal-list li {
-    padding: 16px 0;
-    display: grid; grid-template-columns: 28px 1fr auto;
-    gap: 14px; align-items: center;
-    border-bottom: 1px solid rgba(244, 241, 234, 0.08);
-    color: rgba(244, 241, 234, 0.85);
-    font-size: 15px;
-    position: relative;
-    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  body.ar .arsenal-list li {
-    font-family: 'Tajawal', sans-serif; font-size: 16px;
-  }
+  .arsenal-list { list-style: none; position: relative; z-index: 2; }
+  .arsenal-list li { padding: 16px 0; display: grid; grid-template-columns: 28px 1fr; gap: 14px; align-items: center; border-bottom: 1px solid rgba(244, 241, 234, 0.08); color: rgba(244, 241, 234, 0.85); font-size: 15px; transition: all .35s cubic-bezier(0.22, 1, 0.36, 1); }
+  body.ar .arsenal-list li { font-family: 'Tajawal', sans-serif; font-size: 16px; }
   .arsenal-list li:last-child { border-bottom: none; }
   .arsenal-list li:hover { color: var(--bg); padding-left: 10px; }
   body[dir="rtl"] .arsenal-list li:hover { padding-left: 0; padding-right: 10px; }
-  .arsenal-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; color: var(--accent);
-    letter-spacing: 0.1em; font-weight: 500;
-    opacity: 0.6; transition: opacity 0.3s ease, transform 0.3s ease;
-  }
+  .arsenal-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.1em; font-weight: 500; opacity: 0.7; transition: opacity .3s, transform .3s; }
   .arsenal-list li:hover .arsenal-num { opacity: 1; transform: scale(1.15); }
-  .arsenal-skill {
-    font-family: 'Inter', sans-serif; font-weight: 400;
-    letter-spacing: -0.005em;
-  }
-  body.ar .arsenal-skill { font-family: 'Tajawal', sans-serif; font-weight: 500; }
-  .arsenal-level { display: flex; gap: 3px; align-items: center; flex-shrink: 0; }
-  .arsenal-bar {
-    width: 18px; height: 4px;
-    background: rgba(244, 241, 234, 0.12);
-    border-radius: 1px; transition: background 0.4s ease;
-  }
-  .arsenal-bar.filled { background: rgba(244, 241, 234, 0.4); }
-  .arsenal-list li:hover .arsenal-bar.filled { background: var(--accent); }
-  .arsenal-list li:hover .arsenal-bar { background: rgba(200, 69, 29, 0.2); }
-  .arsenal-footer {
-    margin-top: 28px; padding-top: 20px;
-    border-top: 1px solid rgba(244, 241, 234, 0.15);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(244, 241, 234, 0.35);
-    display: flex; justify-content: space-between; align-items: center;
-    position: relative; z-index: 2;
-  }
-  body.ar .arsenal-footer {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 12px; letter-spacing: 0; text-transform: none;
-  }
-  .arsenal-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--accent); animation: pulse 2s infinite;
-  }
+  body.ar .arsenal-skill { font-weight: 500; }
+  .arsenal-footer { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(244, 241, 234, 0.15); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(244, 241, 234, 0.5); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
+  body.ar .arsenal-footer { font-family: 'Tajawal', sans-serif; font-size: 12px; letter-spacing: 0; text-transform: none; }
+  .arsenal-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
 
   /* CERTIFICATIONS */
-  .cert-tier-label {
-    text-align: center; margin-bottom: 40px; padding-top: 20px;
-  }
-  .cert-tier-label-2 {
-    margin-top: 100px; padding-top: 60px;
-    border-top: 1px solid var(--line);
-  }
-  .cert-tier-kicker {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase;
-    letter-spacing: 0.3em; color: var(--accent);
-    padding: 6px 16px; border: 1px solid var(--accent);
-    margin-bottom: 20px; font-weight: 500;
-  }
-  body.ar .cert-tier-kicker {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0.05em;
-    text-transform: none; font-weight: 700;
-  }
-  .cert-tier-title {
-    font-size: clamp(28px, 3.5vw, 48px);
-    font-weight: 300; line-height: 1.1;
-    letter-spacing: -0.02em; margin-bottom: 14px;
-  }
-  body.ar .cert-tier-title {
-    font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.3;
-  }
-  .cert-tier-title .italic {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
-  body.ar .cert-tier-title .italic {
-    font-family: 'Amiri', serif; font-weight: 700; color: var(--accent);
-  }
-  .cert-tier-desc {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; font-size: 18px; color: var(--ink-muted);
-  }
-  body.ar .cert-tier-desc { font-family: 'Amiri', serif; font-size: 18px; }
-
-  .certs-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  }
-  .certs-grid-pro {
-    margin-bottom: 20px;
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .cert-card {
-    padding: 36px 32px; background: var(--paper);
-    border: 1px solid var(--line);
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative; overflow: hidden;
-  }
-  .cert-card::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: var(--accent);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s ease;
-  }
+  .cert-tier-label { text-align: center; margin-bottom: 40px; padding-top: 20px; }
+  .cert-tier-label-2 { margin-top: 100px; padding-top: 60px; border-top: 1px solid var(--line); }
+  .cert-tier-kicker { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); padding: 6px 16px; border: 1px solid var(--accent); margin-bottom: 20px; font-weight: 500; }
+  body.ar .cert-tier-kicker { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0.05em; text-transform: none; font-weight: 700; }
+  .cert-tier-title { font-size: clamp(28px, 3.5vw, 48px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+  body.ar .cert-tier-title { font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.3; }
+  .cert-tier-title .italic { font-style: italic; color: var(--accent); }
+  body.ar .cert-tier-title .italic { font-family: 'Amiri', serif; font-weight: 700; }
+  .cert-tier-desc { font-style: italic; font-size: 18px; color: var(--ink-muted); }
+  body.ar .cert-tier-desc { font-family: 'Amiri', serif; }
+  .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .certs-grid-pro { margin-bottom: 20px; }
+  .cert-card { padding: 36px 32px; background: var(--paper); border: 1px solid var(--line); transition: all .4s cubic-bezier(0.22, 1, 0.36, 1); position: relative; overflow: hidden; }
+  .cert-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .4s ease; }
   body[dir="rtl"] .cert-card::before { transform-origin: right; }
   .cert-card:hover::before { transform: scaleX(1); }
-  .cert-card:hover {
-    transform: translateY(-6px); background: var(--bg);
-    box-shadow: 0 20px 40px -15px rgba(26, 24, 21, 0.18);
-  }
-  .cert-card-pro {
-    background: var(--ink); color: var(--bg);
-    border-color: var(--ink); padding: 44px 36px 40px;
-  }
+  .cert-card:hover { transform: translateY(-6px); background: var(--bg); box-shadow: 0 20px 40px -15px rgba(26, 24, 21, 0.18); }
+  .cert-card-pro { background: var(--ink); color: var(--bg); border-color: var(--ink); padding: 44px 36px 40px; }
   .cert-card-pro::before { background: var(--gold); }
-  .cert-card-pro::after {
-    content: ''; position: absolute;
-    top: 0; right: 0;
-    width: 120px; height: 120px;
-    background: radial-gradient(circle at top right, rgba(184, 147, 77, 0.25) 0%, transparent 65%);
-    opacity: 0; transition: opacity 0.5s ease;
-    pointer-events: none;
-  }
   .cert-card-pro:hover { background: var(--bg-dark); }
-  .cert-card-pro:hover::after { opacity: 1; }
-  .cert-badge {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px; font-weight: 600;
-    letter-spacing: 0.25em;
-    padding: 4px 10px;
-    background: var(--gold); color: var(--ink); margin-bottom: 20px;
-  }
-  body.ar .cert-badge {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 12px; letter-spacing: 0.05em; font-weight: 700;
-  }
+  .cert-badge { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.25em; padding: 4px 10px; background: var(--gold); color: var(--ink); margin-bottom: 20px; }
+  body.ar .cert-badge { font-family: 'Tajawal', sans-serif; font-size: 12px; letter-spacing: 0.05em; font-weight: 700; }
   .cert-card-pro .cert-issuer { color: var(--gold); }
-  .cert-card-pro .cert-name { color: var(--bg); }
-  .cert-card-pro .cert-name .italic { color: var(--bg); }
-  .cert-card-pro .cert-date {
-    color: rgba(244, 241, 234, 0.5);
-    border-top-color: rgba(244, 241, 234, 0.15);
-  }
-  .cert-issuer {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase;
-    letter-spacing: 0.15em; color: var(--accent);
-    margin-bottom: 14px; font-weight: 500;
-  }
-  body.ar .cert-issuer {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 700;
-  }
-  .cert-name {
-    font-size: 22px; font-weight: 400; line-height: 1.3;
-    letter-spacing: -0.01em; margin-bottom: 20px;
-  }
+  .cert-card-pro .cert-name, .cert-card-pro .cert-name .italic { color: var(--bg); }
+  .cert-card-pro .cert-date { color: rgba(244, 241, 234, 0.6); border-top-color: rgba(244, 241, 234, 0.15); }
+  .cert-issuer { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 14px; font-weight: 500; }
+  body.ar .cert-issuer { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 700; }
+  .cert-name { font-size: 22px; font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 20px; }
   body.ar .cert-name { font-family: 'Tajawal', sans-serif; font-weight: 700; }
-  .cert-name .italic { font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; }
+  .cert-name .italic { font-style: italic; font-weight: 500; }
   body.ar .cert-name .italic { font-family: 'Amiri', serif; }
-  .cert-date {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    color: var(--ink-muted); padding-top: 16px;
-    border-top: 1px solid var(--line);
-  }
+  .cert-date { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-muted); padding-top: 16px; border-top: 1px solid var(--line); }
   body.ar .cert-date { font-family: 'Tajawal', sans-serif; font-size: 13px; }
 
   /* RECOGNITION */
-  .press-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  }
-  .press-card {
-    padding: 40px 32px; background: var(--paper);
-    border: 1px solid var(--line);
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative; overflow: hidden;
-  }
-  .press-card::after {
-    content: '✦'; position: absolute;
-    top: 20px; right: 24px; font-size: 24px; color: var(--accent);
-    transition: transform 0.4s, opacity 0.4s; opacity: 0.4;
-  }
+  .press-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .press-card { padding: 40px 32px; background: var(--paper); border: 1px solid var(--line); transition: all .4s cubic-bezier(0.22, 1, 0.36, 1); position: relative; overflow: hidden; }
+  .press-card::after { content: '✦'; position: absolute; top: 20px; right: 24px; font-size: 24px; color: var(--accent); transition: transform .4s, opacity .4s; opacity: 0.4; }
   body[dir="rtl"] .press-card::after { right: auto; left: 24px; }
-  .press-card:hover {
-    transform: translateY(-6px); background: var(--bg);
-    box-shadow: 0 30px 50px -20px rgba(26, 24, 21, 0.18);
-    border-color: var(--accent);
-  }
+  .press-card:hover { transform: translateY(-6px); background: var(--bg); box-shadow: 0 30px 50px -20px rgba(26, 24, 21, 0.18); border-color: var(--accent); }
   .press-card:hover::after { transform: rotate(90deg) scale(1.2); opacity: 1; }
-  .press-source {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase;
-    letter-spacing: 0.2em; color: var(--accent);
-    margin-bottom: 24px; font-weight: 500;
-  }
-  body.ar .press-source {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 700;
-  }
-  .press-quote {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
-    font-size: 22px; line-height: 1.4;
-    color: var(--ink); margin-bottom: 24px; letter-spacing: -0.01em;
-  }
-  body.ar .press-quote {
-    font-family: 'Amiri', serif; font-size: 22px;
-    line-height: 1.6; font-weight: 400;
-  }
+  .press-source { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 24px; font-weight: 500; }
+  body.ar .press-source { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 700; }
+  .press-quote { font-style: italic; font-weight: 500; font-size: 22px; line-height: 1.4; color: var(--ink); margin-bottom: 24px; letter-spacing: -0.01em; }
+  body.ar .press-quote { font-family: 'Amiri', serif; line-height: 1.6; font-weight: 400; }
   .press-quote .accent { color: var(--accent); }
-  .press-detail {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: var(--ink-muted);
-    padding-top: 16px; border-top: 1px solid var(--line);
-  }
+  .press-detail { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-muted); padding-top: 16px; border-top: 1px solid var(--line); }
   body.ar .press-detail { font-family: 'Tajawal', sans-serif; font-size: 13px; }
 
   /* REQUEST */
-  .request-intro {
-    font-size: 20px; line-height: 1.65; color: var(--ink-soft);
-    max-width: 760px; margin-bottom: 56px;
-  }
+  .request-intro { font-size: 20px; line-height: 1.65; color: var(--ink-soft); max-width: 760px; margin-bottom: 56px; }
   body.ar .request-intro { font-size: 19px; line-height: 1.9; }
-  .request-intro em {
-    font-family: 'Inter', sans-serif;
-    font-style: italic; color: var(--accent);
-  }
+  .request-intro em { font-style: italic; color: var(--accent); }
   body.ar .request-intro em { font-family: 'Amiri', serif; font-weight: 700; }
-  .request-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-  }
-  .request-card {
-    display: block; padding: 40px 36px;
-    background: var(--paper); border: 1px solid var(--line);
-    text-decoration: none; color: inherit;
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative; overflow: hidden; cursor: none;
-  }
-  .request-card::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--ink);
-    transform: translateY(100%);
-    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-    z-index: 0;
-  }
+  .request-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .request-card { display: block; padding: 40px 36px; background: var(--paper); border: 1px solid var(--line); text-decoration: none; color: inherit; transition: all .4s cubic-bezier(0.22, 1, 0.36, 1); position: relative; overflow: hidden; }
+  .request-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--ink); transform: translateY(100%); transition: transform .5s cubic-bezier(0.76, 0, 0.24, 1); z-index: 0; }
   .request-card:hover::before { transform: translateY(0); }
   .request-card:hover { color: var(--bg); border-color: var(--ink); }
   .request-card > * { position: relative; z-index: 1; }
-  .request-meta {
-    display: flex; justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase;
-    letter-spacing: 0.15em; margin-bottom: 28px;
-    color: var(--ink-muted); transition: color 0.4s;
-  }
-  .request-card:hover .request-meta { color: rgba(244, 241, 234, 0.5); }
-  body.ar .request-meta {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 12px; letter-spacing: 0;
-    text-transform: none; font-weight: 500;
-  }
+  .request-meta { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 28px; color: var(--ink-muted); transition: color .4s; }
+  .request-card:hover .request-meta { color: rgba(244, 241, 234, 0.6); }
+  body.ar .request-meta { font-family: 'Tajawal', sans-serif; font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 500; }
   .request-type { color: var(--accent); font-weight: 500; }
-  .request-title {
-    font-size: 26px; font-weight: 400;
-    letter-spacing: -0.02em; line-height: 1.2;
-    margin-bottom: 12px; transition: color 0.4s;
-  }
+  .request-title { font-size: 26px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 12px; }
   body.ar .request-title { font-family: 'Tajawal', sans-serif; font-weight: 700; }
-  .request-title .italic {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; opacity: 0.7;
-  }
+  .request-title .italic { font-style: italic; font-weight: 500; opacity: 0.7; }
   body.ar .request-title .italic { font-family: 'Amiri', serif; }
-  .request-desc {
-    font-size: 15px; line-height: 1.6;
-    color: var(--ink-soft); margin-bottom: 32px; transition: color 0.4s;
-  }
+  .request-desc { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 32px; transition: color .4s; }
   .request-card:hover .request-desc { color: rgba(244, 241, 234, 0.8); }
   body.ar .request-desc { font-size: 16px; line-height: 1.85; }
-  .request-cta {
-    display: flex; justify-content: space-between; align-items: center;
-    padding-top: 20px; border-top: 1px solid var(--line); transition: border-color 0.4s;
-  }
+  .request-cta { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid var(--line); transition: border-color .4s; }
   .request-card:hover .request-cta { border-color: rgba(244, 241, 234, 0.25); }
-  .request-cta-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.15em; color: var(--accent);
-    font-weight: 500; transition: letter-spacing 0.3s;
-  }
-  body.ar .request-cta-text {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0;
-    text-transform: none; font-weight: 700;
-  }
+  .request-cta-text { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); font-weight: 500; transition: letter-spacing .3s; }
+  body.ar .request-cta-text { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 700; }
   .request-card:hover .request-cta-text { letter-spacing: 0.25em; }
   body.ar .request-card:hover .request-cta-text { letter-spacing: 0.08em; }
-  .request-arrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 32px; color: var(--accent); transition: transform 0.4s;
-  }
+  .request-arrow { font-size: 32px; color: var(--accent); transition: transform .4s; }
   body[dir="rtl"] .request-arrow { transform: scaleX(-1); }
   .request-card:hover .request-arrow { transform: translateX(8px); }
   body[dir="rtl"] .request-card:hover .request-arrow { transform: translateX(-8px) scaleX(-1); }
 
   /* CONTACT */
-  .contact {
-    padding: 180px 0 120px; text-align: center;
-    position: relative; overflow: hidden;
-  }
-  .contact::before {
-    content: ''; position: absolute;
-    top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(200, 69, 29, 0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .contact-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;
-    color: var(--ink-muted); margin-bottom: 32px; position: relative; z-index: 2;
-  }
-  body.ar .contact-label {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px; letter-spacing: 0; text-transform: none; font-weight: 500;
-  }
-  .contact-title {
-    font-size: clamp(56px, 10vw, 160px);
-    font-weight: 300; line-height: 1;
-    letter-spacing: -0.04em; margin-bottom: 60px; position: relative; z-index: 2;
-  }
-  body.ar .contact-title {
-    font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.15;
-  }
-  .contact-title .italic {
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500; color: var(--accent);
-  }
+  .contact { padding: 180px 0 120px; text-align: center; position: relative; overflow: hidden; }
+  .contact::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(200, 69, 29, 0.08) 0%, transparent 70%); pointer-events: none; }
+  .contact-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--ink-muted); margin-bottom: 32px; position: relative; z-index: 2; }
+  body.ar .contact-label { font-family: 'Tajawal', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; font-weight: 500; }
+  .contact-title { font-size: clamp(56px, 10vw, 160px); font-weight: 300; line-height: 1; letter-spacing: -0.04em; margin-bottom: 60px; position: relative; z-index: 2; }
+  body.ar .contact-title { font-family: 'Tajawal', sans-serif; font-weight: 700; line-height: 1.15; }
+  .contact-title .italic { font-style: italic; font-weight: 500; color: var(--accent); }
   body.ar .contact-title .italic { font-family: 'Amiri', serif; font-weight: 700; }
-  .contact-email {
-    display: inline-block; font-size: 32px;
-    font-family: 'Inter', sans-serif; font-style: italic; font-weight: 500;
-    color: var(--ink); text-decoration: none;
-    padding: 20px 48px; border: 1px solid var(--ink);
-    border-radius: 100px;
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    margin-bottom: 60px; position: relative; z-index: 2;
-  }
-  .contact-email:hover {
-    background: var(--ink); color: var(--bg); letter-spacing: 0.02em;
-  }
-  .contact-links {
-    display: flex; justify-content: center;
-    flex-wrap: wrap; gap: 40px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em;
-    position: relative; z-index: 2;
-  }
-  body.ar .contact-links {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px; letter-spacing: 0; text-transform: none; font-weight: 500;
-  }
-  .contact-links a {
-    color: var(--ink-soft); text-decoration: none;
-    position: relative; padding-bottom: 4px; transition: color 0.3s;
-  }
-  .contact-links a::after {
-    content: ''; position: absolute;
-    left: 0; bottom: 0; width: 100%; height: 1px;
-    background: var(--accent); transform: scaleX(0);
-    transform-origin: left; transition: transform 0.3s;
-  }
+  .contact-email { display: inline-block; font-size: 32px; font-style: italic; font-weight: 500; color: var(--ink); text-decoration: none; padding: 20px 48px; border: 1px solid var(--ink); border-radius: 100px; transition: all .4s cubic-bezier(0.22, 1, 0.36, 1); margin-bottom: 60px; position: relative; z-index: 2; }
+  .contact-email:hover { background: var(--ink); color: var(--bg); letter-spacing: 0.02em; }
+  .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; position: relative; z-index: 2; }
+  body.ar .contact-links { font-family: 'Tajawal', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; font-weight: 500; }
+  .contact-links a { color: var(--ink-soft); text-decoration: none; position: relative; padding-bottom: 4px; transition: color .3s; }
+  .contact-links a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
   .contact-links a:hover { color: var(--accent); }
   .contact-links a:hover::after { transform: scaleX(1); }
+  footer { padding: 48px 40px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); }
+  body.ar footer { font-family: 'Tajawal', sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; }
 
-  footer {
-    padding: 48px 40px; border-top: 1px solid var(--line);
-    display: flex; justify-content: space-between;
-    flex-wrap: wrap; gap: 20px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em;
-    color: var(--ink-muted);
-  }
-  body.ar footer {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 13px; letter-spacing: 0; text-transform: none;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes slideUp {
-    from { transform: translateY(110%); }
-    to { transform: translateY(0); }
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.3); }
-  }
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(6px); }
-  }
-
-  .reveal {
-    opacity: 0; transform: translateY(50px);
-    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes slideUp { from { transform: translateY(110%); } to { transform: translateY(0); } }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+  .reveal { opacity: 0; transform: translateY(50px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .container { padding: 0 22px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    .reveal, .uni-card { opacity: 1; transform: none; }
+    .marquee-track { animation: none; }
+  }
+
+  /* RESPONSIVE — nav collapses at 1200px */
+  @media (max-width: 1200px) {
     nav { padding: 14px 22px; }
-    body { cursor: auto; }
     .nav-book { font-size: 9px; padding: 7px 12px; gap: 6px; margin-right: 8px; letter-spacing: 0.1em; }
     body.ar .nav-book { font-size: 11px; }
     body[dir="rtl"] .nav-book { margin-left: 8px; margin-right: auto; }
     .nav-book-dot { width: 5px; height: 5px; }
-    .nav-links {
-      position: fixed; top: 60px; left: 0; right: 0;
-      background: rgba(244, 241, 234, 0.98);
-      backdrop-filter: blur(20px);
-      flex-direction: column; padding: 32px 24px; gap: 0;
-      border-bottom: 1px solid var(--line);
-      transform: translateY(-120%);
-      transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-      max-height: calc(100vh - 60px); overflow-y: auto;
-      box-shadow: 0 20px 40px -10px rgba(26, 24, 21, 0.15);
-    }
-    .nav-links.open { transform: translateY(0); display: flex; }
+    .nav-links { position: fixed; top: 60px; left: 0; right: 0; background: rgba(244, 241, 234, 0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 32px 24px; gap: 0; border-bottom: 1px solid var(--line); transform: translateY(-120%); transition: transform .5s cubic-bezier(0.76, 0, 0.24, 1); max-height: calc(100vh - 60px); overflow-y: auto; box-shadow: 0 20px 40px -10px rgba(26, 24, 21, 0.15); visibility: hidden; }
+    .nav-links.open { transform: translateY(0); visibility: visible; }
     .nav-links a { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 16px; letter-spacing: 0.05em; }
     body.ar .nav-links a { font-size: 17px; letter-spacing: 0; }
     .nav-links a:last-child { border-bottom: none; }
-    .nav-toggle {
-      display: flex; flex-direction: column; gap: 5px;
-      background: transparent; border: none; cursor: pointer; padding: 10px; margin-right: 8px;
-    }
+    .nav-toggle { display: flex; flex-direction: column; gap: 5px; background: transparent; border: none; cursor: pointer; padding: 10px; margin-right: 8px; }
     body[dir="rtl"] .nav-toggle { margin-right: 0; margin-left: 8px; }
-    .nav-toggle span { width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s ease; }
+    .nav-toggle span { width: 22px; height: 1.5px; background: var(--ink); transition: all .3s ease; }
     .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  }
+  @media (max-width: 900px) {
+    .container { padding: 0 22px; }
     .hero { padding: 130px 0 80px; min-height: 95vh; }
     .hero-meta { flex-direction: column; gap: 8px; align-items: flex-start; margin-bottom: 60px; font-size: 9px; }
     body.ar .hero-meta { font-size: 12px; }
@@ -1477,8 +465,7 @@
     .metrics { padding: 90px 0; }
     .metrics-title { font-size: clamp(36px, 8.5vw, 56px); margin-bottom: 56px; }
     body.ar .metrics-title { font-size: clamp(32px, 7.5vw, 48px); line-height: 1.25; }
-    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-    .metrics-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .metrics-grid, .metrics-grid-2 { grid-template-columns: repeat(2, 1fr); }
     .metric { padding: 36px 14px; }
     .metric-number { font-size: clamp(56px, 14vw, 84px); margin-bottom: 12px; }
     .metric-label { font-size: 9px; letter-spacing: 0.12em; line-height: 1.4; }
@@ -1492,93 +479,60 @@
     body.ar .about-text { font-size: 17px; line-height: 1.95; }
     .about-identity { position: relative; top: 0; padding: 32px 26px; }
     .identity-row { flex-wrap: wrap; padding: 14px 0; }
-    .identity-key { font-size: 9px; }
-    body.ar .identity-key { font-size: 12px; }
     .identity-val { font-size: 17px; }
-    .journey-row { grid-template-columns: 1fr; gap: 14px; padding: 40px 0; }
-    .journey-year { font-size: 80px; margin-bottom: 4px; }
-    .journey-content h3 { font-size: 22px; line-height: 1.3; }
-    .journey-tag { font-size: 9px; padding: 3px 8px; }
-    body.ar .journey-tag { font-size: 11px; }
     .experience-item { grid-template-columns: 1fr; gap: 12px; padding: 40px 0; }
     .experience-item:hover { padding-left: 0; padding-right: 0; }
     .exp-arrow { display: none; }
     .exp-date { padding-top: 0; font-size: 10px; }
     body.ar .exp-date { font-size: 13px; }
     .exp-content h3 { font-size: 24px; line-height: 1.25; }
-    body.ar .exp-content h3 { font-size: 24px; line-height: 1.4; }
-    .exp-desc { font-size: 16px; line-height: 1.7; }
-    body.ar .exp-desc { font-size: 16px; line-height: 1.95; }
+    body.ar .exp-content h3 { line-height: 1.4; }
+    .exp-desc, .exp-list li { font-size: 16px; line-height: 1.7; }
+    body.ar .exp-desc, body.ar .exp-list li { line-height: 1.95; }
     .capstone-card { padding: 56px 26px; }
     .capstone-meta-grid { grid-template-columns: 1fr; }
     .capstone-meta-item { padding: 22px 24px; }
     .capstone-card::before { font-size: 160px; bottom: -40px; right: -40px; }
     .capstone-title { font-size: clamp(64px, 18vw, 110px); line-height: 0.95; margin-bottom: 18px; }
     .capstone-subtitle { font-size: clamp(20px, 5vw, 26px); line-height: 1.4; margin-bottom: 40px; }
-    body.ar .capstone-subtitle { font-size: clamp(20px, 4.8vw, 26px); line-height: 1.6; }
     .capstone-body { font-size: 16px; line-height: 1.75; margin-bottom: 48px; }
-    body.ar .capstone-body { font-size: 16px; line-height: 1.95; }
+    body.ar .capstone-body { line-height: 1.95; }
     .capstone-badge-row { gap: 6px; margin-bottom: 36px; }
     .capstone-tag { font-size: 9px; padding: 6px 10px; }
     body.ar .capstone-tag { font-size: 11px; }
     .uni-grid { grid-template-columns: 1fr; gap: 18px; }
     .uni-card { padding: 32px 26px; }
     .uni-title { font-size: 22px; line-height: 1.25; }
-    body.ar .uni-title { font-size: 22px; line-height: 1.4; }
-    .university-intro { font-size: 17px; line-height: 1.7; margin-bottom: 44px; }
-    body.ar .university-intro { font-size: 17px; line-height: 1.95; }
     .hack-item { grid-template-columns: 1fr; gap: 14px; padding: 44px 0; }
     .hack-item:hover { padding-left: 0; padding-right: 0; }
-    .hack-year { font-size: 64px; line-height: 1; }
+    .hack-year { font-size: 64px; }
     .hack-name { font-size: 22px; line-height: 1.25; }
-    body.ar .hack-name { font-size: 22px; line-height: 1.4; }
     .hack-desc { font-size: 15px; line-height: 1.7; }
-    body.ar .hack-desc { font-size: 15px; line-height: 1.95; }
     .arsenal { grid-template-columns: 1fr; gap: 18px; }
     .arsenal-intro { font-size: 18px; line-height: 1.55; margin: -8px auto 48px; }
-    body.ar .arsenal-intro { font-size: 18px; line-height: 1.85; }
     .arsenal-column { padding: 36px 28px 32px; }
     .arsenal-title { font-size: 28px; line-height: 1.1; }
-    body.ar .arsenal-title { font-size: 26px; line-height: 1.3; }
     .arsenal-column::after { font-size: 180px; bottom: -28px; }
-    .arsenal-list li { grid-template-columns: 24px 1fr auto; gap: 10px; padding: 14px 0; font-size: 14px; }
-    body.ar .arsenal-list li { font-size: 15px; }
-    .arsenal-bar { width: 14px; height: 3px; }
-    .cert-tier-label { margin-bottom: 32px; padding-top: 14px; }
+    .arsenal-list li { padding: 14px 0; font-size: 14px; }
     .cert-tier-label-2 { margin-top: 70px; padding-top: 50px; }
-    .cert-tier-title { font-size: clamp(26px, 6.5vw, 36px); }
-    body.ar .cert-tier-title { font-size: clamp(24px, 6vw, 32px); }
-    .cert-tier-desc { font-size: 16px; }
     .certs-grid { grid-template-columns: 1fr; gap: 16px; }
-    .certs-grid-pro { grid-template-columns: 1fr !important; }
     .cert-card { padding: 32px 26px; }
-    .cert-card-pro { padding: 36px 26px; }
-    .cert-name { font-size: 20px; line-height: 1.3; }
-    body.ar .cert-name { font-size: 20px; line-height: 1.45; }
+    .cert-name { font-size: 20px; }
     .press-grid { grid-template-columns: 1fr; gap: 16px; }
     .press-card { padding: 32px 26px; }
-    .press-quote { font-size: 19px; line-height: 1.4; }
-    body.ar .press-quote { font-size: 19px; line-height: 1.55; }
+    .press-quote { font-size: 19px; }
     .request-grid { grid-template-columns: 1fr; gap: 16px; }
     .request-card { padding: 32px 26px; }
     .request-intro { font-size: 17px; line-height: 1.7; margin-bottom: 40px; }
-    body.ar .request-intro { font-size: 17px; line-height: 1.95; }
-    .request-title { font-size: 22px; line-height: 1.25; }
-    body.ar .request-title { font-size: 22px; line-height: 1.4; }
-    .request-desc { font-size: 14px; line-height: 1.65; }
-    body.ar .request-desc { font-size: 15px; line-height: 1.85; }
+    .request-title { font-size: 22px; }
     .contact { padding: 120px 0 90px; }
     .contact::before { width: 400px; height: 400px; }
     .contact-title { font-size: clamp(48px, 13vw, 80px); line-height: 0.98; margin-bottom: 44px; }
     body.ar .contact-title { font-size: clamp(42px, 11vw, 72px); line-height: 1.2; }
-    .contact-email { font-size: 16px; padding: 16px 28px; letter-spacing: -0.005em; word-break: break-all; }
-    body.ar .contact-email { font-size: 17px; }
-    .contact-links { gap: 18px 28px; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .contact-email { font-size: 16px; padding: 16px 28px; word-break: break-all; }
+    .contact-links { gap: 18px 28px; }
     footer { padding: 32px 22px; flex-direction: column; text-align: center; gap: 10px; }
   }
-
-  @media (min-width: 901px) { .nav-toggle { display: none; } }
-
   @media (max-width: 380px) {
     .container { padding: 0 18px; }
     .hero-title { font-size: clamp(48px, 16vw, 80px); }
@@ -1586,7 +540,6 @@
     .metric { padding: 32px 18px; }
     .metric-number { font-size: 72px; }
     .capstone-card { padding: 44px 20px; }
-    .capstone-card::before { font-size: 120px; }
   }
 </style>
 </head>
@@ -1595,14 +548,6 @@
 <div class="cursor"></div>
 <div class="cursor-follower"></div>
 
-<div id="mobile-warning" style="display:none;position:fixed;inset:0;background:#0f0e0c;z-index:99999;align-items:center;justify-content:center;text-align:center;padding:40px;font-family:'Inter',sans-serif;">
-  <div style="max-width:320px;">
-    <div style="font-size:48px;margin-bottom:24px;">🖥️</div>
-    <p style="color:#e8e4dc;font-size:18px;line-height:1.6;margin-bottom:8px;">This portfolio is designed for desktop.</p>
-    <p style="color:#6b6560;font-size:14px;line-height:1.7;">For the best experience, open it on a computer using a web browser like Chrome or Safari.</p>
-    <p style="color:#6b6560;font-size:13px;margin-top:20px;direction:rtl;">هذا الملف مُصمَّم للحاسوب — افتحه من متصفّح ويب على الكمبيوتر للحصول على أفضل تجربة.</p>
-  </div>
-</div>
 <div class="loader" id="loader">
   <div class="loader-quote" data-en='"I don&apos;t build products. I build clarity."' data-ar="«أنا لا أبني منتجات. أبني وضوحاً.»">"I don't build products. I build clarity."</div>
   <div class="loader-text" data-en="Abdulmalek." data-ar="عبدالملك."><span>Abdulmalek.</span></div>
@@ -1613,17 +558,16 @@
 <div class="scroll-progress" id="scroll-progress"></div>
 
 <nav id="nav">
-  <a href="#" class="nav-logo">A.A</a>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+  <a href="#" class="nav-logo" aria-label="Home">A.A</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links" id="nav-links">
     <a href="#manifesto" data-en="Manifesto" data-ar="الرؤية">Manifesto</a>
     <a href="#metrics" data-en="Numbers" data-ar="الأرقام">Numbers</a>
     <a href="#about" data-en="About" data-ar="عن">About</a>
-    <a href="#journey" data-en="Journey" data-ar="المسيرة">Journey</a>
-    <a href="#experience" data-en="Work" data-ar="العمل">Work</a>
     <a href="#capstone" data-en="Capstone" data-ar="التخرج">Capstone</a>
+    <a href="#experience" data-en="Work" data-ar="العمل">Work</a>
     <a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
     <a href="#recognition" data-en="Recognition" data-ar="التقدير">Recognition</a>
     <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
@@ -1633,8 +577,8 @@
     <span data-en="Book Meeting" data-ar="احجز اجتماعاً">Book Meeting</span>
   </a>
   <div class="lang-switch">
-    <button class="lang-btn active" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="ar">ع</button>
+    <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+    <button class="lang-btn" data-lang="ar" aria-label="العربية">ع</button>
   </div>
 </nav>
 
@@ -1643,14 +587,14 @@
   <div class="container">
     <div class="hero-meta">
       <span class="pulse" data-en="Available for opportunities — 2026" data-ar="مُتاحٌ للفرص — ٢٠٢٦">Available for opportunities — 2026</span>
-      <span data-en="Portfolio / vol.03" data-ar="بورتفوليو / إصدار ٣">Portfolio / vol.03</span>
+      <span data-en="Portfolio / vol.04" data-ar="بورتفوليو / إصدار ٤">Portfolio / vol.04</span>
     </div>
     <h1 class="hero-title">
       <span class="line"><span style="--i:0" data-en="Abdulmalek" data-ar="عبدالملك">Abdulmalek</span></span>
       <span class="line"><span style="--i:1" data-en="&lt;em class='italic'&gt;Alghamdi&lt;/em&gt;" data-ar="&lt;em class='italic'&gt;الغامدي&lt;/em&gt;"><em class="italic">Alghamdi</em></span></span>
     </h1>
     <div class="hero-bottom">
-      <p class="hero-description" data-en="CS &amp; Engineering graduate, Class of 2026. Former IT Business Analyst Intern at Channels by stc — open to new opportunities." data-ar="خرّيج علوم وهندسة الحاسب، دفعة ٢٠٢٦. متدرّب سابق كمحلّل أعمال في قنوات stc — مستعدٌّ لفرص جديدة.">CS &amp; Engineering graduate, Class of 2026. Former IT Business Analyst Intern at Channels by stc — open to new opportunities.</p>
+      <p class="hero-description" data-en="CS &amp; Engineering graduate, Class of 2026. IT Business Analyst at SEET Agency, formerly at Channels by stc." data-ar="خرّيج علوم وهندسة الحاسب، دفعة ٢٠٢٦. محلّل أعمال تقنية المعلومات في SEET Agency، وسابقاً في قنوات stc.">CS &amp; Engineering graduate, Class of 2026. IT Business Analyst at SEET Agency, formerly at Channels by stc.</p>
       <div class="hero-location">
         <span data-en="Based in" data-ar="مُقيمٌ في">Based in</span>
         <strong data-en="Saudi Arabia" data-ar="المملكة العربيّة السّعوديّة">Saudi Arabia</strong>
@@ -1678,7 +622,7 @@
     <h2 class="metrics-title" data-en="Four years. &lt;span class='italic'&gt;One path.&lt;/span&gt; No shortcuts." data-ar="أربع سنوات. &lt;span class='italic'&gt;طريقٌ واحد.&lt;/span&gt; بلا اختصارات.">Four years. <span class="italic">One path.</span> No shortcuts.</h2>
     <div class="metrics-grid">
       <div class="metric">
-        <div class="metric-number"><span class="count" data-target="10">0</span><span class="metric-suffix">%</span></div>
+        <div class="metric-number"><span class="count" data-target="3">0</span><span class="metric-suffix">%</span></div>
         <div class="metric-label" data-en="Top of Graduates" data-ar="ضمن أعلى الخرّيجين">Top of Graduates</div>
       </div>
       <div class="metric">
@@ -1696,7 +640,7 @@
     </div>
     <div class="metrics-grid-2">
       <div class="metric">
-        <div class="metric-number"><span class="count" data-target="6">0</span></div>
+        <div class="metric-number"><span class="count" data-target="7">0</span></div>
         <div class="metric-label" data-en="Months as Analyst at stc" data-ar="أشهرٌ مُحلِّلاً في stc">Months as Analyst at stc</div>
       </div>
       <div class="metric">
@@ -1707,7 +651,7 @@
   </div>
 </section>
 
-<div class="marquee">
+<div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span data-en="Systems Analysis" data-ar="تحليل الأنظمة">Systems Analysis</span>
     <span data-en="Business Requirements" data-ar="متطلبات الأعمال">Business Requirements</span>
@@ -1718,6 +662,7 @@
     <span data-en="Business Requirements" data-ar="متطلبات الأعمال">Business Requirements</span>
     <span data-en="Product Thinking" data-ar="تفكير منتجي">Product Thinking</span>
     <span data-en="Process Modeling" data-ar="نمذجة العمليات">Process Modeling</span>
+    <span data-en="Digital Transformation" data-ar="التحول الرقمي">Digital Transformation</span>
   </div>
 </div>
 
@@ -1729,10 +674,10 @@
       <h2 class="section-title" data-en="A bridge between &lt;span class='italic'&gt;business&lt;/span&gt; &amp; &lt;span class='italic'&gt;engineering&lt;/span&gt;." data-ar="جسرٌ بين &lt;span class='italic'&gt;الأعمال&lt;/span&gt; و&lt;span class='italic'&gt;الهندسة&lt;/span&gt;.">A bridge between <span class="italic">business</span> &amp; <span class="italic">engineering</span>.</h2>
     </div>
     <div class="about-grid">
-      <div class="about-text" data-en="<p>I'm a <em>Computer Science &amp; Engineering</em> graduate from the University of Hafr Al-Batin, Class of 2026. My path was never pure code.</p><p>I found my edge in the <em>in-between</em> — sitting with stakeholders, mapping their intent, and handing engineers a blueprint they can build from. At <em>stc</em> I shaped digital channel requirements across 10K+ users. At <em>Al-Rakeen</em> I led digital product delivery. Now at <em>T2</em>, shipping Ru'a — a real estate platform.</p><p>Professionally certified in <em>CAPM</em> and Udacity's <em>AI Product Manager</em> Nanodegree. I write user stories, draw BPMN diagrams, argue with SQL, lead three-person teams, and ship things that matter — all in a day's work.</p>" data-ar="<p>خرّيج <em>علوم وهندسة الحاسب</em> من جامعة حفر الباطن، دفعة ٢٠٢٦. لم يكن طريقي برمجةً صرفة في يوم من الأيّام.</p><p>وجدتُ موطئ قدمي في <em>المنطقة الوسطى</em> — أجلس مع أصحاب القرار، وأترجم نيّاتهم إلى خرائط عمل، ثمّ أسلّم المهندسين مُخطّطاً جاهزاً للبناء. في <em>stc</em> صغتُ متطلّبات القنوات الرّقميّة ودعمتُ أكثر من ١٠ آلاف مستخدم. وفي <em>الرّكين</em> قدتُ تسليم المنتج الرّقميّ. الآن في <em>T2</em>، أبني منصّة رؤى للعقارات.</p><p>معتمدٌ احترافيّاً في <em>CAPM</em>، وخرّيج برنامج <em>AI Product Manager</em> من Udacity. أكتب قصص المستخدم، وأرسم مخطّطات BPMN، وأتحاور مع قواعد البيانات، وأقود فرقاً من ثلاثة أعضاء، وأُسلّم ما له قيمة — كلّ ذلك في يوم عمل واحد.</p>">
+      <div class="about-text" data-en="<p>I'm a <em>Computer Science &amp; Engineering</em> graduate from the University of Hafr Al-Batin, Class of 2026. My path was never pure code.</p><p>I found my edge in the <em>in-between</em> — sitting with stakeholders, mapping their intent, and handing engineers a blueprint they can build from. At <em>stc</em> I shaped digital channel requirements and supported 10K+ users. Today I'm an IT Business Analyst at <em>SEET Agency</em>, turning client requirements into clear product specs.</p><p>Certified in <em>CAPM</em>, <em>ITIL 4 Foundation</em> and Udacity's <em>AI Product Manager</em> Nanodegree. I write user stories, draw BPMN diagrams, argue with SQL, lead teams of up to six, and ship things that matter — all in a day's work.</p>" data-ar="<p>خرّيج <em>علوم وهندسة الحاسب</em> من جامعة حفر الباطن، دفعة ٢٠٢٦. لم يكن طريقي برمجةً صرفة في يوم من الأيّام.</p><p>وجدتُ موطئ قدمي في <em>المنطقة الوسطى</em> — أجلس مع أصحاب القرار، وأترجم نيّاتهم إلى خرائط عمل، ثمّ أسلّم المهندسين مُخطّطاً جاهزاً للبناء. في <em>stc</em> صغتُ متطلّبات القنوات الرّقميّة ودعمتُ أكثر من ١٠ آلاف مستخدم. واليوم أعمل محلّل أعمال تقنية معلومات في <em>SEET Agency</em> أحوّل متطلّبات العملاء إلى مواصفات منتج واضحة.</p><p>معتمدٌ في <em>CAPM</em> و<em>ITIL 4 Foundation</em>، وخرّيج برنامج <em>AI Product Manager</em> من Udacity. أكتب قصص المستخدم، وأرسم مخطّطات BPMN، وأتحاور مع قواعد البيانات، وأقود فرقاً تصل إلى ستّة أعضاء، وأُسلّم ما له قيمة — كلّ ذلك في يوم عمل واحد.</p>">
         <p>I'm a <em>Computer Science &amp; Engineering</em> graduate from the University of Hafr Al-Batin, Class of 2026. My path was never pure code.</p>
-        <p>I found my edge in the <em>in-between</em> — sitting with stakeholders, mapping their intent, and handing engineers a blueprint they can build from. At <em>stc</em> I shaped digital channel requirements and supported 10K+ users. At <em>Al-Rakeen</em> I led a website build team and turned digital concepts into shipped products.</p>
-        <p>Professionally certified in <em>CAPM</em> and Udacity's <em>AI Product Manager</em> Nanodegree. I write user stories, draw BPMN diagrams, argue with SQL, lead three-person teams, and ship things that matter — all in a day's work.</p>
+        <p>I found my edge in the <em>in-between</em> — sitting with stakeholders, mapping their intent, and handing engineers a blueprint they can build from. At <em>stc</em> I shaped digital channel requirements and supported 10K+ users. Today I'm an IT Business Analyst at <em>SEET Agency</em>, turning client requirements into clear product specs.</p>
+        <p>Certified in <em>CAPM</em>, <em>ITIL 4 Foundation</em> and Udacity's <em>AI Product Manager</em> Nanodegree. I write user stories, draw BPMN diagrams, argue with SQL, lead teams of up to six, and ship things that matter — all in a day's work.</p>
       </div>
       <div class="about-identity">
         <div class="about-identity-label" data-en="Identity" data-ar="الهوية">Identity</div>
@@ -1749,16 +694,12 @@
           <span class="identity-val" data-en="B.Sc. CS&amp;E" data-ar="بكالوريوس علوم وهندسة حاسب">B.Sc. CS&amp;E</span>
         </div>
         <div class="identity-row">
-          <span class="identity-key" data-en="Graduating" data-ar="التخرج">Graduating</span>
-          <span class="identity-val">2026</span>
+          <span class="identity-key" data-en="Graduated" data-ar="التخرج">Graduated</span>
+          <span class="identity-val" data-en="2026" data-ar="٢٠٢٦">2026</span>
         </div>
         <div class="identity-row">
           <span class="identity-key" data-en="Rank" data-ar="المرتبة">Rank</span>
-          <span class="identity-val"><span class="accent" data-en="Top 10% Graduate" data-ar="أعلى ١٠٪">Top 10% Graduate</span></span>
-        </div>
-        <div class="identity-row">
-          <span class="identity-key" data-en="Licensed" data-ar="مرخّص">Licensed</span>
-          <span class="identity-val" style="font-size: 16px;">SCE #1009232</span>
+          <span class="identity-val"><span class="accent" data-en="Top 3% Graduate" data-ar="أعلى ٣٪">Top 3% Graduate</span></span>
         </div>
       </div>
     </div>
@@ -1811,43 +752,33 @@
   <div class="container">
     <div class="section-header">
       <div class="section-number" data-en="03 / Experience" data-ar="٠٣ / الخبرات">03 / Experience</div>
-      <h2 class="section-title" data-en="Where I've &lt;span class='italic'&gt;worked&lt;/span&gt;." data-ar="أين &lt;span class='italic'&gt;عملت&lt;/span&gt;.">Where I've <span class="italic">worked</span>.</h2>
+      <h2 class="section-title" data-en="Where I &lt;span class='italic'&gt;work&lt;/span&gt;." data-ar="أين &lt;span class='italic'&gt;أعمل&lt;/span&gt;.">Where I <span class="italic">work</span>.</h2>
     </div>
     <div class="experience-list">
       <div class="experience-item">
-        <div class="exp-date" data-en="Apr — Jun 2026 · 3 mos" data-ar="أبريل — يونيو ٢٠٢٦ · ٣ أشهر">Apr — Jun 2026 · 3 mos</div>
+        <div class="exp-date" data-en="Aug 2026 — Present · Part-time" data-ar="أغسطس ٢٠٢٦ — الآن · دوام جزئي">Aug 2026 — Present · Part-time</div>
         <div class="exp-content">
-          <h3 data-en="Associate Product Manager <span class='company'>— T2</span>" data-ar="مدير منتج مساعد <span class='company'>— T2</span>">Associate Product Manager <span class="company">— T2</span></h3>
-          <p class="exp-desc" data-en="Contributing to &lt;em&gt;Ru'a&lt;/em&gt;, a digital platform improving access to real estate services. Drove a measurable increase in site visits through structured discovery and product iteration." data-ar="أساهم في تطوير &lt;em&gt;رؤى&lt;/em&gt;، منصّةٌ رقميّة تُيسّر الوصول إلى خدمات العقارات. حقّقتُ ارتفاعاً ملموساً في زيارات الموقع من خلال عمليّات اكتشاف منظّمة وتطوير تكراريّ للمنتج.">Contributing to <em>Ru'a</em>, a digital platform improving access to real estate services. Drove a measurable increase in site visits through structured discovery and product iteration.</p>
+          <h3 data-en="IT Business Analyst <span class='company'>— SEET Agency</span>" data-ar="محلل أعمال تقنية المعلومات <span class='company'>— SEET Agency</span>">IT Business Analyst <span class="company">— SEET Agency</span></h3>
+          <ul class="exp-list">
+            <li data-en="Analyze and translate client and brand business requirements into clear product and system specifications." data-ar="تحليل متطلبات العملاء والعلامات التجارية وترجمتها إلى مواصفات واضحة للمنتج والنظام.">Analyze and translate client and brand business requirements into clear product and system specifications.</li>
+            <li data-en="Conduct stakeholder interviews and requirements workshops to gather functional and technical needs." data-ar="إجراء مقابلات مع أصحاب المصلحة وورش عمل للمتطلبات لجمع الاحتياجات الوظيفية والتقنية.">Conduct stakeholder interviews and requirements workshops to gather functional and technical needs.</li>
+            <li data-en="Build and launch digital solutions, aligning product features with business objectives through delivery." data-ar="بناء وإطلاق حلول رقمية، مع مواءمة ميزات المنتج مع أهداف الأعمال حتى التسليم.">Build and launch digital solutions, aligning product features with business objectives through delivery.</li>
+          </ul>
           <div class="exp-tags">
-            <span class="exp-tag" data-en="Riyadh · On-site" data-ar="الرياض · حضوري">Riyadh · On-site</span>
-            <span class="exp-tag" data-en="Product Management" data-ar="إدارة المنتج">Product Management</span>
-            <span class="exp-tag">Roadmapping</span>
-            <span class="exp-tag" data-en="Discovery" data-ar="اكتشاف">Discovery</span>
+            <span class="exp-tag" data-en="Al-Khobar" data-ar="الخبر">Al-Khobar</span>
+            <span class="exp-tag" data-en="Part-time" data-ar="دوام جزئي">Part-time</span>
+            <span class="exp-tag" data-en="Business Analysis" data-ar="تحليل أعمال">Business Analysis</span>
+            <span class="exp-tag" data-en="Requirements" data-ar="المتطلبات">Requirements</span>
+            <span class="exp-tag" data-en="Stakeholder Workshops" data-ar="ورش أصحاب المصلحة">Stakeholder Workshops</span>
           </div>
         </div>
-        <div class="exp-arrow">→</div>
-      </div>
-      <div class="experience-item">
-        <div class="exp-date" data-en="Jan — Mar 2026 · 3 mos" data-ar="يناير — مارس ٢٠٢٦ · ٣ أشهر">Jan — Mar 2026 · 3 mos</div>
-        <div class="exp-content">
-          <h3 data-en="Digital Product and Growth Intern <span class='company'>— AL-RAKEEN</span>" data-ar="متدرّب منتج رقمي ونموّ <span class='company'>— الركين</span>">Digital Product and Growth Intern <span class="company">— AL-RAKEEN</span></h3>
-          <p class="exp-desc" data-en="Led end-to-end delivery of the company website. Worked across digital product development, B2B solutions, and &lt;em&gt;low-code and AI-enabled workflows&lt;/em&gt;." data-ar="أشرفتُ على تسليم موقع الشّركة من البداية إلى النّهاية. عملتُ في تطوير المنتجات الرّقميّة وحلول B2B وسير عمل &lt;em&gt;مُمكَّن بالذّكاء الاصطناعيّ&lt;/em&gt;.">Led end-to-end delivery of the company website. Worked across digital product development, B2B solutions, and <em>low-code and AI-enabled workflows</em>.</p>
-          <div class="exp-tags">
-            <span class="exp-tag" data-en="Riyadh · Remote" data-ar="الرياض · عن بُعد">Riyadh · Remote</span>
-            <span class="exp-tag" data-en="Internship" data-ar="تدريب">Internship</span>
-            <span class="exp-tag" data-en="Product Development" data-ar="تطوير منتجات">Product Development</span>
-            <span class="exp-tag">B2B</span>
-            <span class="exp-tag" data-en="Growth" data-ar="نموّ">Growth</span>
-          </div>
-        </div>
-        <div class="exp-arrow">→</div>
+        <div class="exp-arrow" aria-hidden="true">→</div>
       </div>
       <div class="experience-item">
         <div class="exp-date" data-en="Jun — Dec 2025 · 7 mos" data-ar="يونيو — ديسمبر ٢٠٢٥ · ٧ أشهر">Jun — Dec 2025 · 7 mos</div>
         <div class="exp-content">
           <h3 data-en="IT Business Analyst <span class='company'>— Channels by stc</span>" data-ar="محلل أعمال تقنية المعلومات <span class='company'>— قنوات stc</span>">IT Business Analyst <span class="company">— Channels by stc</span></h3>
-          <p class="exp-desc" data-en="Supported &lt;em&gt;10K+ users&lt;/em&gt; across critical systems. Managed change requests, led BRD and requirements gathering, executed UAT." data-ar="دعمتُ &lt;em&gt;أكثر من ١٠ آلاف مستخدم&lt;/em&gt; عبر أنظمةٍ حيويّة. أدرتُ طلبات التّغيير وقدتُ جمع المتطلّبات ونفّذتُ UAT.">Supported <em>10K+ users</em> across critical systems. Managed change requests, led BRD and requirements gathering, executed UAT across critical systems.</p>
+          <p class="exp-desc" data-en="Supported &lt;em&gt;10K+ users&lt;/em&gt; across critical systems. Managed change requests, led BRD and requirements gathering, executed UAT." data-ar="دعمتُ &lt;em&gt;أكثر من ١٠ آلاف مستخدم&lt;/em&gt; عبر أنظمةٍ حيويّة. أدرتُ طلبات التّغيير وقدتُ جمع المتطلّبات ونفّذتُ UAT.">Supported <em>10K+ users</em> across critical systems. Managed change requests, led BRD and requirements gathering, executed UAT.</p>
           <div class="exp-tags">
             <span class="exp-tag" data-en="Riyadh · On-site" data-ar="الرياض · حضوري">Riyadh · On-site</span>
             <span class="exp-tag" data-en="Internship" data-ar="تدريب">Internship</span>
@@ -1856,7 +787,7 @@
             <span class="exp-tag">UAT</span>
           </div>
         </div>
-        <div class="exp-arrow">→</div>
+        <div class="exp-arrow" aria-hidden="true">→</div>
       </div>
     </div>
   </div>
@@ -1871,32 +802,32 @@
     </div>
     <div class="uni-grid">
       <div class="uni-card">
-        <div class="uni-header"><span class="uni-course">CSEN 3201</span><span class="uni-year">2024</span></div>
+        <div class="uni-header"><span class="uni-course">CSEN 3201</span><span class="uni-year" data-en="2024" data-ar="٢٠٢٤">2024</span></div>
         <h3 class="uni-title" data-en="Database Systems &lt;span class='italic'&gt;— E-Library Platform&lt;/span&gt;" data-ar="أنظمة قواعد البيانات &lt;span class='italic'&gt;— منصة مكتبة رقمية&lt;/span&gt;">Database Systems <span class="italic">— E-Library Platform</span></h3>
         <p class="uni-desc" data-en="Built an ER model, normalized schema, and SQL back-end for a &lt;em&gt;university e-library&lt;/em&gt;. Normalized to 3NF and stress-tested with 10K+ synthetic records." data-ar="بنيتُ نموذج ER ومخططاً مطبّعاً وواجهة SQL لمكتبة جامعية إلكترونية. أوصلتُ العلاقات إلى 3NF.">Built an ER model, normalized schema, and SQL back-end for a <em>university e-library</em>. Normalized to 3NF and stress-tested with 10K+ synthetic records.</p>
         <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">MySQL</span><span class="exp-tag">ER Modeling</span></div>
       </div>
       <div class="uni-card">
-        <div class="uni-header"><span class="uni-course">CSEN 3301</span><span class="uni-year">2024</span></div>
+        <div class="uni-header"><span class="uni-course">CSEN 3301</span><span class="uni-year" data-en="2024" data-ar="٢٠٢٤">2024</span></div>
         <h3 class="uni-title" data-en="Computer Networks &lt;span class='italic'&gt;— Campus Network&lt;/span&gt;" data-ar="شبكات الحاسب &lt;span class='italic'&gt;— شبكة جامعية&lt;/span&gt;">Computer Networks <span class="italic">— Campus Network</span></h3>
         <p class="uni-desc" data-en="Simulated a full &lt;em&gt;enterprise network&lt;/em&gt; using Cisco Packet Tracer: VLANs, subnetting, routing protocols, DHCP, and ACLs." data-ar="حاكيتُ شبكة مؤسسية متكاملة باستخدام Cisco Packet Tracer.">Simulated a full <em>enterprise network</em> using Cisco Packet Tracer: VLANs, subnetting, routing protocols, DHCP, and ACLs.</p>
         <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">Cisco</span><span class="exp-tag">VLANs</span></div>
       </div>
       <div class="uni-card">
-        <div class="uni-header"><span class="uni-course">CSEN 3102</span><span class="uni-year">2024</span></div>
+        <div class="uni-header"><span class="uni-course">CSEN 3102</span><span class="uni-year" data-en="2024" data-ar="٢٠٢٤">2024</span></div>
         <h3 class="uni-title" data-en="Software Engineering &lt;span class='italic'&gt;— Clinic System&lt;/span&gt;" data-ar="هندسة البرمجيات &lt;span class='italic'&gt;— نظام عيادة&lt;/span&gt;">Software Engineering <span class="italic">— Clinic System</span></h3>
         <p class="uni-desc" data-en="Designed and documented a full-stack &lt;em&gt;clinic management system&lt;/em&gt; following SDLC best practices. Delivered SRS, use-case diagrams, and a working prototype." data-ar="صمّمتُ نظام إدارة عيادة متكامل وفق أفضل ممارسات SDLC.">Designed and documented a full-stack <em>clinic management system</em> following SDLC best practices. Delivered SRS, use-case diagrams, and a working prototype.</p>
         <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">UML</span><span class="exp-tag">SRS</span></div>
       </div>
       <div class="uni-card">
-        <div class="uni-header"><span class="uni-course">CSEN 4302</span><span class="uni-year">2025</span></div>
+        <div class="uni-header"><span class="uni-course">CSEN 4302</span><span class="uni-year" data-en="2025" data-ar="٢٠٢٥">2025</span></div>
         <h3 class="uni-title" data-en="Artificial Intelligence &lt;span class='italic'&gt;— RAG Survey&lt;/span&gt;" data-ar="الذكاء الاصطناعي &lt;span class='italic'&gt;— دراسة RAG&lt;/span&gt;">Artificial Intelligence <span class="italic">— RAG Survey</span></h3>
-        <p class="uni-desc" data-en="Led a 6-member team analyzing three landmark &lt;em&gt;Retrieval-Augmented Generation&lt;/em&gt; papers — mapping RAG's evolution into modular self-reflective systems." data-ar="قدتُ فريقاً لتحليل أوراق بحثية محورية في التوليد المعزز بالاسترجاع.">Led a 6-member team analyzing three landmark <em>Retrieval-Augmented Generation</em> papers — mapping RAG's evolution into modular self-reflective systems.</p>
+        <p class="uni-desc" data-en="Led a 6-member team analyzing three landmark &lt;em&gt;Retrieval-Augmented Generation&lt;/em&gt; papers — mapping RAG's evolution into modular self-reflective systems." data-ar="قدتُ فريقاً من ستة أعضاء لتحليل ثلاث أوراق بحثية محورية في &lt;em&gt;التوليد المعزز بالاسترجاع&lt;/em&gt;.">Led a 6-member team analyzing three landmark <em>Retrieval-Augmented Generation</em> papers — mapping RAG's evolution into modular self-reflective systems.</p>
         <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">LLMs</span><span class="exp-tag">RAG</span></div>
       </div>
       <div class="uni-card">
-        <div class="uni-header"><span class="uni-course">CSEN 0242</span><span class="uni-year">2025</span></div>
-        <h3 class="uni-title" data-en="Digital Transformation &lt;span class='italic'&gt;— HumeX Pilot&lt;/span&gt;" data-ar="التحول الرقمي &lt;span class='italic'&gt;— تجربة HumeX&lt;/span&gt;">Digital Transformation <span class="italic">— HumeX Pilot</span></h3>
+        <div class="uni-header"><span class="uni-course">CSEN 0242</span><span class="uni-year" data-en="2025" data-ar="٢٠٢٥">2025</span></div>
+        <h3 class="uni-title" data-en="Digital Transformation &lt;span class='italic'&gt;— HUMEX Pilot&lt;/span&gt;" data-ar="التحول الرقمي &lt;span class='italic'&gt;— تجربة HUMEX&lt;/span&gt;">Digital Transformation <span class="italic">— HUMEX Pilot</span></h3>
         <p class="uni-desc" data-en="Proposed an &lt;em&gt;AI-powered crowd flow analytics platform&lt;/em&gt; for the University of Hafr Al-Batin, with live dashboards, heatmaps, and alerts." data-ar="اقترحتُ منصة تحليل تدفق الحشود بالذكاء الاصطناعي لجامعة حفر الباطن.">Proposed an <em>AI-powered crowd flow analytics platform</em> for the University of Hafr Al-Batin, with live dashboards, heatmaps, and alerts.</p>
         <div class="uni-tags"><span class="exp-tag" data-en="Team Leader" data-ar="قائد فريق">Team Leader</span><span class="exp-tag">YOLOv8</span><span class="exp-tag">Computer Vision</span></div>
       </div>
@@ -1913,36 +844,36 @@
     </div>
     <div class="hackathons-list">
       <div class="hack-item">
-        <div class="hack-year">2023</div>
+        <div class="hack-year" data-en="2023" data-ar="٢٠٢٣">2023</div>
         <div class="hack-content">
-          <div class="hack-result"><span class="hack-medal">◉</span><span class="hack-place" data-en="Participant" data-ar="مشارك">Participant</span></div>
+          <div class="hack-result"><span class="hack-medal" aria-hidden="true">◉</span><span class="hack-place" data-en="Participant" data-ar="مشارك">Participant</span></div>
           <h3 class="hack-name" data-en="3rd Programming Hackathon &lt;span class='italic'&gt;— University of Hafr Al-Batin&lt;/span&gt;" data-ar="هاكاثون البرمجة الثالث &lt;span class='italic'&gt;— جامعة حفر الباطن&lt;/span&gt;">3rd Programming Hackathon <span class="italic">— University of Hafr Al-Batin</span></h3>
           <p class="hack-desc" data-en="Designed and built an &lt;em&gt;electronic attendance system&lt;/em&gt; for university students — my first taste of turning a real campus pain-point into a working product." data-ar="صمّمتُ وبنيتُ &lt;em&gt;نظام حضورٍ إلكترونيّ&lt;/em&gt; لطلّاب الجامعة — كانت تجربتي الأولى في تحويل مشكلةٍ جامعيّةٍ حقيقيّة إلى منتجٍ عامل.">Designed and built an <em>electronic attendance system</em> for university students — my first taste of turning a real campus pain-point into a working product.</p>
           <div class="hack-tags"><span class="exp-tag">EdTech</span><span class="exp-tag" data-en="First Hackathon" data-ar="أول هاكاثون">First Hackathon</span></div>
         </div>
       </div>
       <div class="hack-item">
-        <div class="hack-year">2024</div>
+        <div class="hack-year" data-en="2024" data-ar="٢٠٢٤">2024</div>
         <div class="hack-content">
-          <div class="hack-result"><span class="hack-medal">🥈</span><span class="hack-place" data-en="2nd Place" data-ar="المركز الثاني">2nd Place</span></div>
+          <div class="hack-result"><span class="hack-medal" aria-hidden="true">🥈</span><span class="hack-place" data-en="2nd Place" data-ar="المركز الثاني">2nd Place</span></div>
           <h3 class="hack-name" data-en="CyberThon &lt;span class='italic'&gt;— Hafr Al-Batin&lt;/span&gt;" data-ar="سايبرثون &lt;span class='italic'&gt;— حفر الباطن&lt;/span&gt;">CyberThon <span class="italic">— Hafr Al-Batin</span></h3>
           <p class="hack-desc" data-en="Built a platform that &lt;em&gt;detects phishing links and fraudulent messages&lt;/em&gt;. Finished in 2nd place, recognized for the clarity of the analysis behind the detection logic." data-ar="بنيتُ منصّةً &lt;em&gt;تكشف روابط التّصيّد والرّسائل الاحتياليّة&lt;/em&gt;. حصدتُ المركز الثّاني، ونلتُ الإشادة على وضوح التّحليل.">Built a platform that <em>detects phishing links and fraudulent messages</em>. Finished in 2nd place, recognized for the clarity of the analysis behind the detection logic.</p>
           <div class="hack-tags"><span class="exp-tag" data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</span><span class="exp-tag" data-en="Phishing Detection" data-ar="كشف التصيد">Phishing Detection</span><span class="exp-tag" data-en="Web App" data-ar="تطبيق ويب">Web App</span></div>
         </div>
       </div>
       <div class="hack-item">
-        <div class="hack-year">2025</div>
+        <div class="hack-year" data-en="2025" data-ar="٢٠٢٥">2025</div>
         <div class="hack-content">
-          <div class="hack-result"><span class="hack-medal">🏁</span><span class="hack-place" data-en="Finalist" data-ar="متأهل للنهائيات">Finalist</span></div>
+          <div class="hack-result"><span class="hack-medal" aria-hidden="true">🏁</span><span class="hack-place" data-en="Finalist" data-ar="متأهل للنهائيات">Finalist</span></div>
           <h3 class="hack-name" data-en="Absher Tuwaiq Hackathon &lt;span class='italic'&gt;— RASHID&lt;/span&gt;" data-ar="هاكاثون أبشر طويق &lt;span class='italic'&gt;— رشيد&lt;/span&gt;">Absher Tuwaiq Hackathon <span class="italic">— RASHID</span></h3>
           <p class="hack-desc" data-en="Analyzed access-control workflows for government entities and designed &lt;em&gt;RASHID&lt;/em&gt; — a GPT-powered smart gate system. Reached the finals." data-ar="حلّلتُ تدفّقات التّحكّم بالوصول للجهات الحكوميّة، وصمّمتُ &lt;em&gt;رشيد&lt;/em&gt; — نظام بوّابةٍ ذكيّة مدعومٍ بـ GPT. تأهّلتُ إلى النّهائيّات.">Analyzed access-control workflows for government entities and designed <em>RASHID</em> — a GPT-powered smart gate system. Reached the finals.</p>
           <div class="hack-tags"><span class="exp-tag">GPT / AI</span><span class="exp-tag" data-en="Gov. Tech" data-ar="تقنية حكومية">Gov. Tech</span><span class="exp-tag" data-en="Access Control" data-ar="التحكم بالوصول">Access Control</span></div>
         </div>
       </div>
       <div class="hack-item">
-        <div class="hack-year">2025</div>
+        <div class="hack-year" data-en="2025" data-ar="٢٠٢٥">2025</div>
         <div class="hack-content">
-          <div class="hack-result"><span class="hack-medal">◈</span><span class="hack-place" data-en="Stage 2 Qualifier" data-ar="متأهل للمرحلة الثانية">Stage 2 Qualifier</span></div>
+          <div class="hack-result"><span class="hack-medal" aria-hidden="true">◈</span><span class="hack-place" data-en="Stage 2 Qualifier" data-ar="متأهل للمرحلة الثانية">Stage 2 Qualifier</span></div>
           <h3 class="hack-name" data-en="Channels by stc Hackathon &lt;span class='italic'&gt;— AOUN AI&lt;/span&gt;" data-ar="هاكاثون قنوات stc &lt;span class='italic'&gt;— عون AI&lt;/span&gt;">Channels by stc Hackathon <span class="italic">— AOUN AI</span></h3>
           <p class="hack-desc" data-en="Contributed to &lt;em&gt;AOUN AI&lt;/em&gt;, an intelligent request management platform. Shaped the business requirements and workflow analysis — qualifying to Stage 2." data-ar="ساهمتُ في &lt;em&gt;عون AI&lt;/em&gt;، منصّة ذكيّة لإدارة الطّلبات. صغتُ متطلّبات الأعمال وحلّلتُ سير العمل — فتأهّل المشروع إلى المرحلة الثّانية.">Contributed to <em>AOUN AI</em>, an intelligent request management platform. Shaped the business requirements and workflow analysis — qualifying to Stage 2.</p>
           <div class="hack-tags"><span class="exp-tag" data-en="AI Platform" data-ar="منصة ذكاء اصطناعي">AI Platform</span><span class="exp-tag" data-en="Request Mgmt" data-ar="إدارة الطلبات">Request Mgmt</span><span class="exp-tag" data-en="Business Analysis" data-ar="تحليل أعمال">Business Analysis</span></div>
@@ -1961,7 +892,6 @@
     </div>
     <p class="arsenal-intro" data-en="I don't pick sides. I &lt;span class='accent'&gt;analyze&lt;/span&gt; like a consultant, &lt;span class='accent'&gt;deliver&lt;/span&gt; like a PM, and &lt;span class='accent'&gt;build&lt;/span&gt; like an engineer." data-ar="لا أنحاز إلى جانبٍ واحد. &lt;span class='accent'&gt;أُحلّل&lt;/span&gt; كاستشاريٍّ، و&lt;span class='accent'&gt;أُسلّم&lt;/span&gt; كمدير مشاريع، و&lt;span class='accent'&gt;أبني&lt;/span&gt; كمهندس.">I don't pick sides. I <span class="accent">analyze</span> like a consultant, <span class="accent">deliver</span> like a PM, and <span class="accent">build</span> like an engineer.</p>
     <div class="arsenal">
-      <!-- COLUMN 1: ANALYSIS -->
       <div class="arsenal-column" data-index="01">
         <div class="arsenal-header">
           <div>
@@ -1971,16 +901,15 @@
           <div class="arsenal-count" data-en="06 / skills" data-ar="٠٦ / مهارة">06 / skills</div>
         </div>
         <ul class="arsenal-list">
-          <li><span class="arsenal-num">01</span><span class="arsenal-skill" data-en="Business Requirements" data-ar="متطلبات الأعمال">Business Requirements</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
-          <li><span class="arsenal-num">02</span><span class="arsenal-skill" data-en="Systems Analysis &amp; Design" data-ar="تحليل وتصميم الأنظمة">Systems Analysis &amp; Design</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
-          <li><span class="arsenal-num">03</span><span class="arsenal-skill" data-en="Functional Requirements" data-ar="المتطلبات الوظيفية">Functional Requirements</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">04</span><span class="arsenal-skill" data-en="UML &amp; BPMN Modeling" data-ar="نمذجة UML و BPMN">UML &amp; BPMN Modeling</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">05</span><span class="arsenal-skill" data-en="SDLC Mastery" data-ar="إتقان دورة الحياة">SDLC Mastery</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">06</span><span class="arsenal-skill" data-en="Stakeholder Management" data-ar="إدارة أصحاب المصلحة">Stakeholder Management</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">01</span><span class="arsenal-skill" data-en="Business Requirements" data-ar="متطلبات الأعمال">Business Requirements</span></li>
+          <li><span class="arsenal-num">02</span><span class="arsenal-skill" data-en="Systems Analysis &amp; Design" data-ar="تحليل وتصميم الأنظمة">Systems Analysis &amp; Design</span></li>
+          <li><span class="arsenal-num">03</span><span class="arsenal-skill" data-en="Functional Requirements" data-ar="المتطلبات الوظيفية">Functional Requirements</span></li>
+          <li><span class="arsenal-num">04</span><span class="arsenal-skill" data-en="UML &amp; BPMN Modeling" data-ar="نمذجة UML و BPMN">UML &amp; BPMN Modeling</span></li>
+          <li><span class="arsenal-num">05</span><span class="arsenal-skill" data-en="SDLC Mastery" data-ar="إتقان دورة الحياة">SDLC Mastery</span></li>
+          <li><span class="arsenal-num">06</span><span class="arsenal-skill" data-en="Stakeholder Management" data-ar="إدارة أصحاب المصلحة">Stakeholder Management</span></li>
         </ul>
         <div class="arsenal-footer"><span data-en="Where chaos becomes clarity" data-ar="هنا تتحوّل الفوضى إلى وضوح">Where chaos becomes clarity</span><span class="arsenal-dot"></span></div>
       </div>
-      <!-- COLUMN 2: DELIVERY -->
       <div class="arsenal-column" data-index="02">
         <div class="arsenal-header">
           <div>
@@ -1990,15 +919,14 @@
           <div class="arsenal-count" data-en="05 / skills" data-ar="٠٥ / مهارة">05 / skills</div>
         </div>
         <ul class="arsenal-list">
-          <li><span class="arsenal-num">01</span><span class="arsenal-skill" data-en="Agile / Scrum" data-ar="أجايل / سكرم">Agile / Scrum</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
-          <li><span class="arsenal-num">02</span><span class="arsenal-skill" data-en="Jira &amp; Confluence" data-ar="Jira و Confluence">Jira &amp; Confluence</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">03</span><span class="arsenal-skill" data-en="API Integration — Postman" data-ar="تكامل API — Postman">API Integration — Postman</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">04</span><span class="arsenal-skill" data-en="Project Management — CAPM" data-ar="إدارة المشاريع — CAPM">Project Management — CAPM</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
-          <li><span class="arsenal-num">05</span><span class="arsenal-skill" data-en="Risk &amp; Governance" data-ar="المخاطر والحوكمة">Risk &amp; Governance</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
+          <li><span class="arsenal-num">01</span><span class="arsenal-skill" data-en="Agile / Scrum" data-ar="أجايل / سكرم">Agile / Scrum</span></li>
+          <li><span class="arsenal-num">02</span><span class="arsenal-skill" data-en="Jira &amp; Confluence" data-ar="Jira و Confluence">Jira &amp; Confluence</span></li>
+          <li><span class="arsenal-num">03</span><span class="arsenal-skill" data-en="API Integration — Postman" data-ar="تكامل API — Postman">API Integration — Postman</span></li>
+          <li><span class="arsenal-num">04</span><span class="arsenal-skill" data-en="Project Management — CAPM" data-ar="إدارة المشاريع — CAPM">Project Management — CAPM</span></li>
+          <li><span class="arsenal-num">05</span><span class="arsenal-skill" data-en="Risk &amp; Governance" data-ar="المخاطر والحوكمة">Risk &amp; Governance</span></li>
         </ul>
         <div class="arsenal-footer"><span data-en="Where plans become products" data-ar="هنا تتحوّل الخطط إلى منتجات">Where plans become products</span><span class="arsenal-dot"></span></div>
       </div>
-      <!-- COLUMN 3: TECHNICAL -->
       <div class="arsenal-column" data-index="03">
         <div class="arsenal-header">
           <div>
@@ -2008,12 +936,12 @@
           <div class="arsenal-count" data-en="06 / skills" data-ar="٠٦ / مهارة">06 / skills</div>
         </div>
         <ul class="arsenal-list">
-          <li><span class="arsenal-num">01</span><span class="arsenal-skill" data-en="SQL &amp; Databases" data-ar="SQL وقواعد البيانات">SQL &amp; Databases</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">02</span><span class="arsenal-skill" data-en="Data Analysis" data-ar="تحليل البيانات">Data Analysis</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">03</span><span class="arsenal-skill" data-en="Java &amp; Spring Boot" data-ar="Java و Spring Boot">Java &amp; Spring Boot</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">04</span><span class="arsenal-skill" data-en="Python" data-ar="بايثون">Python</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">05</span><span class="arsenal-skill" data-en="Cloud — Huawei Certified" data-ar="السحابة — معتمد هواوي">Cloud — Huawei Certified</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar"></span></span></li>
-          <li><span class="arsenal-num">06</span><span class="arsenal-skill" data-en="AI / Generative AI" data-ar="الذكاء الاصطناعي / التوليدي">AI / Generative AI</span><span class="arsenal-level"><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span><span class="arsenal-bar filled"></span></span></li>
+          <li><span class="arsenal-num">01</span><span class="arsenal-skill" data-en="SQL &amp; Databases" data-ar="SQL وقواعد البيانات">SQL &amp; Databases</span></li>
+          <li><span class="arsenal-num">02</span><span class="arsenal-skill" data-en="Data Analysis" data-ar="تحليل البيانات">Data Analysis</span></li>
+          <li><span class="arsenal-num">03</span><span class="arsenal-skill" data-en="Java &amp; Spring Boot" data-ar="Java و Spring Boot">Java &amp; Spring Boot</span></li>
+          <li><span class="arsenal-num">04</span><span class="arsenal-skill" data-en="Python" data-ar="بايثون">Python</span></li>
+          <li><span class="arsenal-num">05</span><span class="arsenal-skill" data-en="Cloud — Huawei Certified" data-ar="السحابة — معتمد هواوي">Cloud — Huawei Certified</span></li>
+          <li><span class="arsenal-num">06</span><span class="arsenal-skill" data-en="AI / Generative AI" data-ar="الذكاء الاصطناعي / التوليدي">AI / Generative AI</span></li>
         </ul>
         <div class="arsenal-footer"><span data-en="Where ideas become real" data-ar="هنا تتحوّل الأفكار إلى واقع">Where ideas become real</span><span class="arsenal-dot"></span></div>
       </div>
@@ -2045,6 +973,12 @@
         <div class="cert-issuer">Udacity</div>
         <h3 class="cert-name" data-en="AI Product Manager <span class='italic'>Nanodegree</span>" data-ar="مدير منتجات <span class='italic'>الذكاء الاصطناعي</span>">AI Product Manager <span class="italic">Nanodegree</span></h3>
         <div class="cert-date" data-en="Issued: Oct 2025" data-ar="صدرت: أكتوبر ٢٠٢٥">Issued: Oct 2025</div>
+      </div>
+      <div class="cert-card cert-card-pro">
+        <div class="cert-badge" data-en="PRO" data-ar="احترافي">PRO</div>
+        <div class="cert-issuer">Axelos · PeopleCert</div>
+        <h3 class="cert-name" data-en="ITIL 4 <span class='italic'>Foundation</span>" data-ar="ITIL 4 <span class='italic'>Foundation</span>">ITIL 4 <span class="italic">Foundation</span></h3>
+        <div class="cert-date" data-en="IT Service Management" data-ar="إدارة خدمات تقنية المعلومات">IT Service Management</div>
       </div>
     </div>
     <div class="cert-tier-label cert-tier-label-2">
@@ -2084,12 +1018,12 @@
       </div>
       <div class="press-card">
         <div class="press-source" data-en="Saudi Council of Engineers" data-ar="هيئة المهندسين السعودية">Saudi Council of Engineers</div>
-        <div class="press-quote" data-en="Licensed &lt;span class='accent'&gt;engineering&lt;/span&gt; professional" data-ar="مرخّص كمهندس &lt;span class='accent'&gt;محترف معتمد&lt;/span&gt;">Licensed <span class="accent">engineering</span> professional</div>
-        <div class="press-detail" data-en="Registration # 1009232" data-ar="رقم التسجيل ١٠٠٩٢٣٢">Registration # 1009232</div>
+        <div class="press-quote" data-en="Registered &lt;span class='accent'&gt;engineering&lt;/span&gt; professional" data-ar="مسجّل كمهندس &lt;span class='accent'&gt;محترف&lt;/span&gt;">Registered <span class="accent">engineering</span> professional</div>
+        <div class="press-detail" data-en="Registration number available on request" data-ar="رقم التسجيل متاح عند الطلب">Registration number available on request</div>
       </div>
       <div class="press-card">
         <div class="press-source" data-en="University of Hafr Al-Batin" data-ar="جامعة حفر الباطن">University of Hafr Al-Batin</div>
-        <div class="press-quote" data-en="Graduating in the <span class='accent'>Top 3</span> of the Computer Science &amp; Engineering Graduates" data-ar="متخرّجٌ ضمن <span class='accent'>أعلى ١٠٪</span> من خرّيجي علوم وهندسة الحاسب">Graduating in the <span class="accent">Top 10%</span> of CS &amp; Engineering</div>
+        <div class="press-quote" data-en="Graduating in the &lt;span class='accent'&gt;Top 3%&lt;/span&gt; of CS &amp;amp; Engineering" data-ar="متخرّجٌ ضمن &lt;span class='accent'&gt;أعلى ٣٪&lt;/span&gt; من خرّيجي علوم وهندسة الحاسب">Graduating in the <span class="accent">Top 3%</span> of CS &amp; Engineering</div>
         <div class="press-detail" data-en="Class of 2026" data-ar="دفعة ٢٠٢٦">Class of 2026</div>
       </div>
       <div class="press-card">
@@ -2108,7 +1042,7 @@
       <div class="section-number" data-en="09 / The Archive" data-ar="٠٩ / الأرشيف">09 / The Archive</div>
       <h2 class="section-title" data-en="Want to &lt;span class='italic'&gt;dig deeper&lt;/span&gt;? Request it." data-ar="هل تُريد أن &lt;span class='italic'&gt;تتعمّق أكثر&lt;/span&gt;؟ اطلبها.">Want to <span class="italic">dig deeper</span>? Request it.</h2>
     </div>
-    <p class="request-intro" data-en="My full deliverables — reports, decks, and documentation — are shared &lt;em&gt;on request only&lt;/em&gt;. This isn't a public dropbox; it's a conversation. Tap any card below to send me a pre-filled email, and I'll follow up personally within 24 hours." data-ar="مُخرجاتي الكاملة — التّقارير والعروض والوثائق — تُشارَك &lt;em&gt;عند الطّلب فقط&lt;/em&gt;. انقر على أيّ بطاقةٍ أدناه لإرسال بريدٍ جاهز، وسأردّ عليك شخصيّاً خلال ٢٤ ساعة.">My full deliverables — reports, decks, and documentation — are shared <em>on request only</em>. This isn't a public dropbox; it's a conversation. Tap any card below to send me a pre-filled email, and I'll follow up personally within 24 hours.</p>
+    <p class="request-intro" data-en="My full deliverables — reports, decks, and documentation — are shared &lt;em&gt;on request only&lt;/em&gt;. This isn't a public dropbox; it's a conversation. Tap any card below to send me a pre-filled email, and I'll follow up personally." data-ar="مُخرجاتي الكاملة — التّقارير والعروض والوثائق — تُشارَك &lt;em&gt;عند الطّلب فقط&lt;/em&gt;. انقر على أيّ بطاقةٍ أدناه لإرسال بريدٍ جاهز، وسأردّ عليك شخصيّاً.">My full deliverables — reports, decks, and documentation — are shared <em>on request only</em>. This isn't a public dropbox; it's a conversation. Tap any card below to send me a pre-filled email, and I'll follow up personally.</p>
     <div class="request-grid">
       <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20Full%20CV&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20request%20your%20full%20CV.%0A%0AName%3A%20%0ACompany%2FRole%3A%20%0AReason%3A%20%0A%0AThanks%2C" class="request-card">
         <div class="request-meta"><span class="request-type" data-en="Resume" data-ar="سيرة ذاتية">Resume</span><span>.docx</span></div>
@@ -2116,16 +1050,16 @@
         <p class="request-desc" data-en="Complete professional resume — experience, skills, certifications, and projects. Updated for 2026." data-ar="السّيرة الذّاتيّة المهنيّة الكاملة — الخبرات، والمهارات، والشّهادات، والمشاريع. مُحدَّثة لعام ٢٠٢٦.">Complete professional resume — experience, skills, certifications, and projects. Updated for 2026.</p>
         <div class="request-cta"><span class="request-cta-text" data-en="Tap to request" data-ar="انقر لطلبها">Tap to request</span><span class="request-arrow">→</span></div>
       </a>
-      <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20HumeX%20Proposal&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20request%20the%20HumeX%20proposal.%0A%0AName%3A%20%0AContext%3A%20%0A%0AThanks%2C" class="request-card">
+      <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20HUMEX%20Proposal&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20request%20the%20HUMEX%20proposal.%0A%0AName%3A%20%0AContext%3A%20%0A%0AThanks%2C" class="request-card">
         <div class="request-meta"><span class="request-type" data-en="Report" data-ar="تقرير">Report</span><span>CSEN 0242</span></div>
-        <h3 class="request-title" data-en="HumeX &lt;span class='italic'&gt;— Full Proposal&lt;/span&gt;" data-ar="HumeX &lt;span class='italic'&gt;— المقترح الكامل&lt;/span&gt;">HumeX <span class="italic">— Full Proposal</span></h3>
+        <h3 class="request-title" data-en="HUMEX &lt;span class='italic'&gt;— Full Proposal&lt;/span&gt;" data-ar="HUMEX &lt;span class='italic'&gt;— المقترح الكامل&lt;/span&gt;">HUMEX <span class="italic">— Full Proposal</span></h3>
         <p class="request-desc" data-en="Digital Transformation pilot for University of Hafr Al-Batin — AI-powered crowd flow analytics with live dashboards, heatmaps, and threshold alerts." data-ar="تجربةُ تحوّلٍ رقميٍّ لجامعة حفر الباطن — تحليل تدفّق الحشود بالذّكاء الاصطناعيّ.">Digital Transformation pilot for University of Hafr Al-Batin — AI-powered crowd flow analytics with live dashboards, heatmaps, and threshold alerts.</p>
         <div class="request-cta"><span class="request-cta-text" data-en="Tap to request" data-ar="انقر لطلبه">Tap to request</span><span class="request-arrow">→</span></div>
       </a>
       <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20RAG%20Research%20Survey&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20request%20the%20full%20RAG%20research%20report.%0A%0AName%3A%20%0APurpose%3A%20%0A%0AThanks%2C" class="request-card">
         <div class="request-meta"><span class="request-type" data-en="Research" data-ar="بحث">Research</span><span>CSEN 4302</span></div>
         <h3 class="request-title" data-en="RAG Survey &lt;span class='italic'&gt;— Research Report&lt;/span&gt;" data-ar="دراسة RAG &lt;span class='italic'&gt;— التقرير البحثي&lt;/span&gt;">RAG Survey <span class="italic">— Research Report</span></h3>
-        <p class="request-desc" data-en="Comparative analysis of three landmark Retrieval-Augmented Generation papers. Led a 6-member team." data-ar="تحليلٌ مُقارنٌ لثلاث أوراقٍ بحثيّة محوريّة في التّوليد المُعزَّز بالاسترجاع. قدتُ فريقاً من ثلاثة أعضاء.">Comparative analysis of three landmark Retrieval-Augmented Generation papers. Led a 6-member team.</p>
+        <p class="request-desc" data-en="Comparative analysis of three landmark Retrieval-Augmented Generation papers. Led a 6-member team." data-ar="تحليلٌ مُقارنٌ لثلاث أوراقٍ بحثيّة محوريّة في التّوليد المُعزَّز بالاسترجاع. قدتُ فريقاً من ستّة أعضاء.">Comparative analysis of three landmark Retrieval-Augmented Generation papers. Led a 6-member team.</p>
         <div class="request-cta"><span class="request-cta-text" data-en="Tap to request" data-ar="انقر لطلبه">Tap to request</span><span class="request-arrow">→</span></div>
       </a>
       <a href="mailto:Abdulmalek.Alghamdi@outlook.com?subject=Request%3A%20RAG%20Presentation%20Deck&amp;body=Hi%20Abdulmalek%2C%0A%0AI%27d%20like%20to%20request%20the%20RAG%20research%20presentation%20slides.%0A%0AName%3A%20%0APurpose%3A%20%0A%0AThanks%2C" class="request-card">
@@ -2158,9 +1092,9 @@
     <a href="mailto:Abdulmalek.Alghamdi@outlook.com" class="contact-email">Abdulmalek.Alghamdi@outlook.com →</a>
     <div class="contact-links">
       <a href="https://calendar.app.google/KYRBsKQYZcfU3mPaA" target="_blank" rel="noopener" data-en="Book Meeting" data-ar="احجز اجتماعاً">Book Meeting</a>
-      <a href="https://linkedin.com/in/abdulmalek-alghamdi-csegr" target="_blank">LinkedIn</a>
-      <a href="https://github.com/AbdulmalekAlghamdi" target="_blank">GitHub</a>
-      <a href="tel:+966568728387">+966 56 872 8387</a>
+      <a href="https://linkedin.com/in/abdulmalek-alghamdi-csegr" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/AbdulmalekAlghamdi" target="_blank" rel="noopener">GitHub</a>
+      <a href="tel:+966568728387" dir="ltr">+966 56 872 8387</a>
     </div>
   </div>
 </section>
@@ -2174,55 +1108,50 @@
   // MOBILE NAV TOGGLE
   const navToggle = document.getElementById('nav-toggle');
   const navLinks = document.getElementById('nav-links');
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
+  function closeNav() {
+    navToggle.classList.remove('open'); navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
   }
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeNav));
 
-  // LOADER
+  // LOADER (first visit per session only)
   window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
+    try { sessionStorage.setItem('seen', '1'); } catch (e) {}
+    if (document.documentElement.classList.contains('seen')) return;
     const counter = document.getElementById('loader-count');
     let count = 0;
     const interval = setInterval(() => {
       count += Math.floor(Math.random() * 15) + 5;
       if (count >= 100) {
-        count = 100;
-        clearInterval(interval);
+        count = 100; clearInterval(interval);
         setTimeout(() => loader.classList.add('done'), 400);
       }
       counter.textContent = String(count).padStart(2, '0');
     }, 100);
   });
 
-  // CURSOR
+  // CURSOR (fine pointers only)
   const cursor = document.querySelector('.cursor');
   const follower = document.querySelector('.cursor-follower');
-  if (window.matchMedia('(hover: hover)').matches) {
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX; mouseY = e.clientY;
-      cursor.style.left = mouseX + 'px';
-      cursor.style.top = mouseY + 'px';
+      cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
     });
-    function animateFollower() {
+    (function animateFollower() {
       followerX += (mouseX - followerX) * 0.15;
       followerY += (mouseY - followerY) * 0.15;
-      follower.style.left = followerX + 'px';
-      follower.style.top = followerY + 'px';
+      follower.style.left = followerX + 'px'; follower.style.top = followerY + 'px';
       requestAnimationFrame(animateFollower);
-    }
-    animateFollower();
-    const hoverables = document.querySelectorAll('a, button, .metric, .uni-card, .cert-card, .press-card, .request-card, .capstone-meta-item, .arsenal-column, .arsenal-list li, .experience-item, .hack-item, .journey-row, .nav-book');
-    hoverables.forEach(el => {
+    })();
+    document.querySelectorAll('a, button, .metric, .uni-card, .cert-card, .press-card, .request-card, .capstone-meta-item, .arsenal-column, .arsenal-list li, .experience-item, .hack-item, .nav-book').forEach(el => {
       el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
       el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
     });
@@ -2230,49 +1159,40 @@
 
   // SCROLL PROGRESS + NAV
   const progressBar = document.getElementById('scroll-progress');
+  const navEl = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
-    progressBar.style.width = progress + '%';
-    const nav = document.getElementById('nav');
-    if (scrollTop > 50) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  });
+    progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+    navEl.classList.toggle('scrolled', scrollTop > 50);
+  }, { passive: true });
 
   // REVEAL ON SCROLL
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   // ANIMATED COUNTERS
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.target, 10);
-        const duration = 1600;
-        const start = performance.now();
-        function tick(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.floor(eased * target);
-          if (progress < 1) requestAnimationFrame(tick);
-          else el.textContent = target;
-        }
-        requestAnimationFrame(tick);
-        counterObserver.unobserve(el);
-      }
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      const start = performance.now(), duration = 1600;
+      (function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+        if (p < 1) requestAnimationFrame(tick); else el.textContent = target;
+      })(start);
+      counterObserver.unobserve(el);
     });
   }, { threshold: 0.5 });
   document.querySelectorAll('.count').forEach(el => counterObserver.observe(el));
 
   // PARALLAX HERO
   const heroTitle = document.querySelector('.hero-title');
-  if (heroTitle && window.matchMedia('(hover: hover)').matches) {
+  if (heroTitle && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     document.addEventListener('mousemove', (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 12;
       const y = (e.clientY / window.innerHeight - 0.5) * 12;
@@ -2280,63 +1200,57 @@
     });
   }
 
-  // LANGUAGE SWITCH
+  // LANGUAGE SWITCH (persisted)
   const langBtns = document.querySelectorAll('.lang-btn');
-  const body = document.body;
-  const html = document.documentElement;
+  const body = document.body, html = document.documentElement;
   function setLanguage(lang) {
-    if (lang === 'ar') {
-      body.classList.add('ar'); body.classList.remove('en');
-      html.setAttribute('dir', 'rtl'); html.setAttribute('lang', 'ar');
-    } else {
-      body.classList.add('en'); body.classList.remove('ar');
-      html.setAttribute('dir', 'ltr'); html.setAttribute('lang', 'en');
-    }
+    const rtl = lang === 'ar';
+    body.classList.toggle('ar', rtl); body.classList.toggle('en', !rtl);
+    html.setAttribute('dir', rtl ? 'rtl' : 'ltr'); html.setAttribute('lang', lang);
+    body.setAttribute('dir', rtl ? 'rtl' : 'ltr');
     langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
     document.querySelectorAll('[data-en]').forEach(el => {
-      const content = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-      if (content !== null) el.innerHTML = content;
+      const c = el.getAttribute(rtl ? 'data-ar' : 'data-en');
+      if (c !== null) el.innerHTML = c;
     });
-    try { localStorage.setItem('pref-lang', lang); } catch(e) {}
+    try { localStorage.setItem('pref-lang', lang); } catch (e) {}
   }
   langBtns.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
-  setLanguage('en');
+  let savedLang = 'en';
+  try { savedLang = localStorage.getItem('pref-lang') === 'ar' ? 'ar' : 'en'; } catch (e) {}
+  setLanguage(savedLang);
 
-  // ─── UNI CARDS: REVEAL FROM BELOW + SCROLL PARALLAX ───
-  (function() {
+  // UNI CARDS: reveal from below, then gentle scroll parallax
+  (function () {
     const cards = document.querySelectorAll('.uni-card');
     if (!cards.length) return;
-
-    // Step 1: Reveal — slide up from translateY(70px) to translateY(0) when entering viewport
     const revObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('card-visible');
-          revObs.unobserve(e.target);
-        }
+        if (!e.isIntersecting) return;
+        const c = e.target;
+        c.classList.add('card-visible');
+        revObs.unobserve(c);
+        const settle = () => { c.classList.add('settled'); };
+        c.addEventListener('transitionend', (ev) => { if (ev.propertyName === 'transform') settle(); }, { once: true });
+        setTimeout(settle, 1600);
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
     cards.forEach(c => revObs.observe(c));
 
-    // Step 2: Scroll parallax — after reveal, cards continue floating upward smoothly
-    let rafPending = false;
-    function updateParallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let pending = false;
+    function update() {
       const vH = window.innerHeight;
       cards.forEach(card => {
-        if (!card.classList.contains('card-visible')) return;
+        if (!card.classList.contains('settled')) return;
         const r = card.getBoundingClientRect();
-        // progress: 0 = card just entered viewport bottom, 1 = card center at top
-        const progress = 1 - (r.top + r.height * 0.5) / vH;
-        const clamped = Math.max(0, Math.min(1, progress));
-        // Float up to 40px as card moves through viewport
-        const offset = (-clamped * 40).toFixed(1) + 'px';
-        card.style.transform = 'translateY(' + offset + ')';
+        const p = Math.max(0, Math.min(1, 1 - (r.top + r.height * 0.5) / vH));
+        card.style.transform = 'translateY(' + (-p * 40).toFixed(1) + 'px)';
       });
     }
     window.addEventListener('scroll', () => {
-      if (rafPending) return;
-      rafPending = true;
-      requestAnimationFrame(() => { rafPending = false; updateParallax(); });
+      if (pending) return; pending = true;
+      requestAnimationFrame(() => { pending = false; update(); });
     }, { passive: true });
   })();
 </script>
