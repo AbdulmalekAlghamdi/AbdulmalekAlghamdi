@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Abdulmalek Alghamdi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -173,6 +175,16 @@ button { font: inherit; color: inherit; }
 .nav-links a { font-size: 0.8125rem; color: var(--text-2); transition: color 0.25s; }
 .nav-links a:hover { color: var(--text); }
 @media (max-width: 860px) { .nav-links { display: none; } }
+.nav-short { display: none; }
+/* on a phone the full name plus three controls will not fit, so the mark
+   drops to initials and the language switch keeps only its globe */
+@media (max-width: 640px) {
+  .nav { padding-inline: 1rem; }
+  .nav-full { display: none; }
+  .nav-short { display: inline; letter-spacing: 0.04em; }
+  #lang-nav span { display: none; }
+  #lang-nav { padding-inline: 0.6rem; }
+}
 .nav-right { display: flex; align-items: center; gap: 0.625rem; flex-shrink: 0; }
 .nav-cta {
   padding: 0.4rem 0.95rem; border-radius: 100px;
@@ -718,7 +730,10 @@ button { font: inherit; color: inherit; }
 .stack-k { display: block; color: var(--text-3); margin-bottom: 1rem; }
 .stack-grid {
   position: relative; z-index: 1;
-  display: flex; flex-wrap: wrap;
+  /* five fixed columns, so twenty tiles always close as four full rows
+     at every width instead of leaving a ragged last row */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.5rem;
   /* the far edge sinks slightly into the dark */
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.72), #000 42%);
@@ -726,8 +741,8 @@ button { font: inherit; color: inherit; }
 }
 .tile {
   display: grid; place-items: center;
-  flex: 0 0 auto;
-  width: 46px; height: 46px;
+  width: 100%; aspect-ratio: 1;
+  max-width: 52px;
   border: 1px solid var(--line);
   border-radius: 13px;
   background: var(--glass);
@@ -742,7 +757,7 @@ button { font: inherit; color: inherit; }
   animation: drift 6s ease-in-out infinite, sway 9s ease-in-out infinite;
   animation-delay: calc(var(--i) * -0.42s), calc(var(--i) * -0.63s);
 }
-.tile svg { width: 25px; height: 25px; }
+.tile svg { width: 54%; height: 54%; }
 .tile:hover {
   color: var(--brand, var(--text));
   border-color: color-mix(in srgb, var(--brand, var(--text)) 55%, transparent);
@@ -980,7 +995,10 @@ button { font: inherit; color: inherit; }
 
 <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
 <nav class="nav" id="nav" aria-label="Main">
-  <a class="nav-mark" href="#top" data-i18n="nav.name">Abdulmalek&nbsp;Alghamdi</a>
+  <a class="nav-mark" href="#top">
+    <span class="nav-full" data-i18n="nav.name">Abdulmalek&nbsp;Alghamdi</span>
+    <span class="nav-short" aria-hidden="true">AA</span>
+  </a>
   <div class="nav-links">
     <a href="#work" data-i18n="nav.work">Experience</a>
     <a href="#process" data-i18n="nav.process">Process</a>
