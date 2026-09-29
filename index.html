@@ -658,6 +658,17 @@ button { font: inherit; color: inherit; }
 .sk:hover { transform: translateY(-2px); border-color: var(--line-2); background: var(--glass-2); }
 .sk[hidden] { display: none !important; }
 
+@media (max-width: 620px) {
+  /* pills need room either side of the label; these labels do not leave any,
+     so one chip was eating a full row and the column read as broken */
+  .skills { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; border-top: 1px solid var(--line); }
+  .sk {
+    padding: 0.875rem 0; border: 0; border-bottom: 1px solid var(--line);
+    border-radius: 0; background: none; color: var(--text-2);
+  }
+  .sk:hover { transform: none; background: none; color: var(--text); }
+}
+
 /* ── soft skills: their own block, deliberately not tool chips ── */
 .soft-lead { margin-bottom: 2rem; }
 .soft {
@@ -696,6 +707,9 @@ button { font: inherit; color: inherit; }
 .tl-fill {
   position: absolute; inset-inline-start: 5px; top: 8px;
   width: 1px; height: 0; background: var(--grad);
+  /* GSAP measures the target height once; if the timeline reflows shorter the
+     tween can overrun, so clamp it to the rail it is meant to trace */
+  max-height: calc(100% - 16px);
 }
 .tl-item { position: relative; padding-bottom: 2.25rem; }
 .tl-item:last-child { padding-bottom: 0; }
@@ -2408,34 +2422,23 @@ button { font: inherit; color: inherit; }
     /* counts come from the list itself, so the headline never goes stale */
     var n = items.length;
 
-    /* Filtering used to shorten the page, which slid every later section up
-       and read as a jump to the top on a phone. Pin the list to its full
-       height so the document height is identical for every filter. */
-    var list = document.getElementById("skills-list");
-    function lockHeight() {
-      if (!list) return;
-      list.style.minHeight = "";
-      var shown = items.filter(function (it) { return !it.hidden; });
-      items.forEach(function (it) { it.hidden = false; });
-      var full = list.offsetHeight;
-      items.forEach(function (it) { it.hidden = shown.indexOf(it) === -1; });
-      list.style.minHeight = full + "px";
-    }
-    lockHeight();
-    var rt;
-    window.addEventListener("resize", function () {
-      clearTimeout(rt);
-      rt = setTimeout(lockHeight, 180);
-    }, { passive: true });
     ["sk-n", "sk-all"].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) el.textContent = String(n);
     });
     btns.forEach(function (b) {
       b.addEventListener("click", function () {
+        /* Hiding chips shortens the page. If the reader is near the bottom the
+           browser clamps the scroll and the page appears to jump. Hold the
+           filter row where it was instead of padding the list out. */
+        var anchor = document.querySelector(".filters");
+        var before = anchor.getBoundingClientRect().top;
         var f = b.getAttribute("data-f");
         btns.forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
         items.forEach(function (it) { it.hidden = !(f === "all" || it.getAttribute("data-cat") === f); });
+        var drift = anchor.getBoundingClientRect().top - before;
+        if (Math.abs(drift) > 1) window.scrollBy(0, drift);
+
         var shown = items.filter(function (it) { return !it.hidden; });
         if (window.gsap && !reduce) {
           gsap.fromTo(shown, { opacity: 0, scale: 0.94 },
