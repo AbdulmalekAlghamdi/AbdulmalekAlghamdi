@@ -222,10 +222,6 @@ Graduated in the **top 10%** of the class of 2026.
 </div>
 
 <div align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=AbdulmalekAlghamdi&bg_color=0B0B0F&color=B8B2A2&line=D4AF37&point=FFF4C9&area=true&area_color=D4AF37&hide_border=true&custom_title=Contribution%20Rhythm" alt="Activity graph"/>
-</div>
-
-<div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdulmalekAlghamdi/AbdulmalekAlghamdi/output/github-contribution-grid-snake-dark.svg"/>
     <img src="https://raw.githubusercontent.com/AbdulmalekAlghamdi/AbdulmalekAlghamdi/output/github-contribution-grid-snake.svg" alt="Contribution snake"/>
