@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>أداء — نظام متابعة أداء الفريق</title>
+<meta name="description" content="أداء: نظام عربي لمتابعة أداء الموظفين، يتجهز بهوية شركتك. خطة الشهر تتحول لمهام موزعة، متابعة يومية، وتقييم شهري واضح.">
+<meta name="theme-color" content="#050505">
+<meta property="og:title" content="أداء — الفريق كله، بوضوح.">
+<meta property="og:description" content="خطة الشهر تتحول لمهام موزعة، متابعة يومية، وتقييم شهري واضح. يتجهز بهوية شركتك.">
+<meta property="og:image" content="video/poster.jpg">
+<link rel="icon" href="brand/ada-icon-dark.svg">
+<link rel="apple-touch-icon" href="brand/ada-icon-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;500;700;800&family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.css">
+<style>
+:root{--bg:#050505;--bg2:#0d0c0b;--fg:#F3EFE8;--mut:#8C867E;--line:rgba(243,239,232,.12);--orange:#F59A1B;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html{overflow-x:clip;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+::selection{background:var(--orange);color:#000}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+.a{font-family:Alexandria,"IBM Plex Sans Arabic",sans-serif}
+.o{color:var(--orange)}
+.mut{color:var(--mut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 30px;border-radius:999px;font:500 16px "IBM Plex Sans Arabic",sans-serif;text-decoration:none;border:1px solid rgba(243,239,232,.3);color:var(--fg);background:transparent;cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease)}
+.btn:hover{border-color:var(--fg)}
+.btn.solid{background:var(--fg);color:#000;border-color:var(--fg)}
+.btn.solid:hover{background:var(--orange);border-color:var(--orange);transform:translateY(-2px)}
+.btn svg{width:16px;height:16px}
+
+/* شعار */
+.mark{display:inline-flex;align-items:center;text-decoration:none;padding-top:.3em;color:var(--fg)}
+/* الشعار: «اداء» والهمزة شارت فوق الألف */
+.lg{font-family:Alexandria,sans-serif;font-weight:800;line-height:1;white-space:nowrap;display:inline-block}
+.mark .lg{font-size:26px;--bw:.1em;--h:.34em;--g:.06em}
+.lg .alef{position:relative;display:inline-block}
+.lg .hm{position:absolute;left:50%;bottom:calc(100% + var(--gap,.06em));transform:translateX(-50%);display:flex;align-items:flex-end;gap:var(--g,.045em);height:var(--h,.24em);direction:ltr}
+.lg .hm b{display:block;width:var(--bw,.07em);border-radius:.02em;background:currentColor;transform-origin:bottom}
+.lg .hm b:nth-child(1){height:40%}
+.lg .hm b:nth-child(2){height:70%}
+.lg .hm b:nth-child(3){height:100%;background:var(--orange)}
+
+.nav{position:fixed;inset-inline:0;top:0;z-index:40;mix-blend-mode:normal;transition:background .5s,backdrop-filter .5s}
+.nav.solid{background:rgba(5,5,5,.72);backdrop-filter:saturate(1.4) blur(18px);-webkit-backdrop-filter:saturate(1.4) blur(18px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav .btn{min-height:38px;padding:0 18px;font-size:13px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:13px;color:var(--mut)}
+.nav-links a:not(.btn){text-decoration:none;transition:color .3s}
+.nav-links a:not(.btn):hover{color:var(--fg)}
+
+/* 1. الافتتاحية: الأساس عادي، والسينمائي يتفعل بـ .cine */
+.hero{position:relative;padding:150px 0 50px}
+.hero-txt{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px 50px;z-index:2;pointer-events:none}
+.hero-txt .eb{font-size:14px;color:var(--mut);letter-spacing:.02em}
+.hero-txt h1{display:flex;align-items:flex-end;justify-content:center;padding-top:.28em;font-family:Alexandria,sans-serif;font-weight:800;font-size:clamp(110px,min(20vw,38vh),320px);line-height:.9;margin:14px 0 0;letter-spacing:-.04em}
+.hero-txt h1 .dot{color:var(--orange)}
+.hero-txt p{font-family:Alexandria,sans-serif;font-weight:300;font-size:clamp(20px,2.4vw,34px);margin:18px 0 0}
+.hero-media{position:relative;width:min(1240px,100% - 32px);margin:0 auto;aspect-ratio:16/9;border-radius:22px;overflow:hidden;z-index:1;background:#0d0907}
+.hero-media video{width:100%;height:100%;object-fit:cover}
+.scroll-cue{display:none}
+.vid-ctl{position:absolute;bottom:18px;left:18px;z-index:4;width:44px;height:44px;border-radius:50%;border:1px solid rgba(243,239,232,.3);background:rgba(5,5,5,.45);color:var(--fg);display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px)}
+.vid-ctl svg{width:14px;height:14px}
+.vid-ctl .i-play{display:none}
+.vid-ctl.paused .i-play{display:block}
+.vid-ctl.paused .i-pause{display:none}
+.cine .hero{height:100vh;padding:0;overflow:hidden}
+.cine .hero-txt{position:absolute;inset:0;justify-content:center;padding:0 0 30vh}
+.cine .hero-media{position:absolute;left:50%;top:50%;width:100vw;height:100vh;margin:0;aspect-ratio:auto;border-radius:0;will-change:transform}
+.cine .scroll-cue{display:none;position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:3;font-size:12px;color:var(--mut);flex-direction:column;align-items:center;gap:10px}
+.scroll-cue i{width:1px;height:34px;background:linear-gradient(var(--fg),transparent);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* 2. الجملة اللي تنور كلمة كلمة */
+.statement{padding:30vh 0 26vh}
+.statement p{font-family:Alexandria,sans-serif;font-weight:700;font-size:clamp(34px,5.4vw,84px);line-height:1.25;margin:0;max-width:18ch;letter-spacing:-.02em}
+.statement .w{opacity:.14;display:inline-block}
+
+/* 3. شاشات النظام */
+.screens{padding:10vh 0}
+.screens-in{display:flex;flex-direction:column;gap:40px;padding:0 16px;width:min(1240px,100%);margin:0 auto}
+.caps{display:none}
+.cap{display:flex;flex-direction:column;justify-content:center;gap:16px}
+.cap .k{font-size:14px;color:var(--orange)}
+.cap h3{font-family:Alexandria,sans-serif;font-weight:700;font-size:clamp(30px,3.2vw,50px);line-height:1.2;margin:0;letter-spacing:-.02em}
+.cap p{margin:0;color:var(--mut);font-size:17px;max-width:34ch}
+.deck{display:flex;flex-direction:column;gap:56px}
+.card{position:relative;border-radius:22px;overflow:hidden;background:#0d0907;border:1px solid var(--line);box-shadow:0 60px 120px -40px rgba(0,0,0,.9)}
+.card img{width:100%;height:auto;aspect-ratio:1800/1180;object-fit:cover;object-position:top}
+.mcap{display:block;padding:18px 22px 22px;font-size:15px}
+.mcap b{font-family:Alexandria,sans-serif;display:block;font-size:22px}
+.prog{display:none}
+.cine .screens{height:100vh;padding:0;position:relative;overflow:hidden}
+.cine .screens-in{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);align-items:center;gap:4vw;padding:0 max(24px,(100vw - 1240px)/2);width:auto}
+.cine .caps{display:block;position:relative;height:260px}
+.cine .cap{position:absolute;inset:0;opacity:0}
+.cine .deck{display:block;position:relative;aspect-ratio:1800/1180;perspective:1600px}
+.cine .card{position:absolute;inset:0;transform-origin:center bottom}
+.cine .card img{height:100%}
+.cine .mcap{display:none}
+.cine .prog{display:flex;position:absolute;bottom:40px;inset-inline-start:max(24px,(100vw - 1240px)/2);gap:8px}
+.prog i{width:30px;height:2px;background:var(--line);overflow:hidden;position:relative}
+.prog i b{position:absolute;inset:0;background:var(--fg);transform:scaleX(0);transform-origin:right}
+
+/* 4. أرقام */
+.nums{padding:24vh 0}
+.nums-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.num{padding:44px 0 0;padding-inline-end:28px;display:flex;flex-direction:column;gap:12px}
+.num + .num{padding-inline-start:28px;border-inline-start:1px solid var(--line)}
+.num strong{font-family:Alexandria,sans-serif;font-weight:200;font-size:clamp(56px,7vw,112px);line-height:1;letter-spacing:-.04em}
+.num span{color:var(--mut);font-size:15px;max-width:22ch}
+
+/* 5. الهوية تتبدل مع التمرير */
+.ident-in{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5vh;padding:16vh 16px}
+.cine .ident{height:100vh;position:relative;overflow:hidden}
+.cine .ident-in{position:absolute;inset:0;padding:0 24px}
+.ident h2{font-family:Alexandria,sans-serif;font-weight:700;font-size:clamp(34px,4.6vw,70px);margin:0;text-align:center;letter-spacing:-.02em;line-height:1.15}
+.ident h2 .nm{display:inline-block;min-width:3ch;transition:color .6s var(--ease)}
+.mock{--bg:#0d0907;--side:#090604;--panel:#140e0a;--fg2:#efe7dc;--mt:#a8917c;--ac:#d8c4a6;--ac2:#a9c7e8;--rad:14px;width:min(860px,92vw);border-radius:26px;background:var(--bg);color:var(--fg2);padding:16px;display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:14px;aspect-ratio:16/9.4;box-shadow:0 60px 120px -50px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.06)}
+.mock,.mock *{transition:background-color .8s var(--ease),color .8s var(--ease),border-radius .8s var(--ease)}
+.m-main{display:flex;flex-direction:column;gap:12px;min-width:0}
+.m-side{background:var(--side);border-radius:var(--rad);padding:16px 12px;display:flex;flex-direction:column;gap:8px}
+.m-logo{font-weight:700;font-size:20px;padding:2px 6px 12px}
+.m-nav{height:24px;border-radius:8px;display:flex;align-items:center;padding:0 8px}
+.m-nav span{height:5px;border-radius:3px;background:var(--mt);opacity:.5;width:60%}
+.m-nav.on{background:var(--panel)}
+.m-nav.on span{background:var(--fg2);opacity:.85}
+.m-head{display:flex;justify-content:space-between;align-items:center}
+.m-head b{font-family:Alexandria,sans-serif;font-size:clamp(15px,1.8vw,22px);font-weight:700}
+.m-btn{font-size:11px;padding:7px 13px;border-radius:999px;background:var(--fg2);color:var(--bg);font-weight:500}
+.m-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.m-kpi{background:var(--panel);border-radius:var(--rad);padding:14px;display:flex;flex-direction:column;gap:7px}
+.m-kpi small{font-size:10px;color:var(--mt)}
+.m-kpi strong{font-family:Alexandria,sans-serif;font-size:clamp(18px,2.2vw,30px);font-weight:700;line-height:1}
+.m-bar{height:4px;border-radius:3px;background:rgba(127,127,127,.2);overflow:hidden}
+.m-bar i{display:block;height:100%;background:var(--ac)}
+.m-list{background:var(--panel);border-radius:var(--rad);padding:12px 16px;display:flex;flex-direction:column;justify-content:space-around;gap:8px;flex:1}
+.m-row{display:flex;align-items:center;gap:10px;font-size:11px}
+.m-row .av{width:22px;height:22px;border-radius:50%;background:var(--ac);flex:none}
+.m-row .av.b{background:var(--ac2)}
+.m-row .t{flex:1}
+.m-row .bar{flex:1.4;height:4px;border-radius:3px;background:rgba(127,127,127,.2);overflow:hidden}
+.m-row .bar i{display:block;height:100%;background:var(--ac)}
+.m-row .p{color:var(--mt);min-width:28px;text-align:left}
+.ident .dots{display:flex;gap:10px}
+.ident .dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .5s,transform .5s}
+.ident .dots i.on{background:var(--fg);transform:scale(1.2)}
+
+/* 6. المزايا */
+.hz-head{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:0 16px 30px;width:min(1240px,100%);margin:0 auto}
+.hz-head h2{font-family:Alexandria,sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,54px);margin:0;letter-spacing:-.02em}
+.hz-head .mut{display:none}
+.hz-track{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;padding:0 16px 14vh;width:min(1240px,100%);margin:0 auto}
+.cine .hz{height:100vh;position:relative;overflow:hidden}
+.cine .hz-head{position:absolute;top:13vh;inset-inline:max(24px,(100vw - 1240px)/2);padding:0;width:auto}
+.cine .hz-head .mut{display:inline}
+.cine .hz-track{position:absolute;top:34vh;inset-inline-start:max(24px,(100vw - 1240px)/2);display:flex;gap:20px;padding:0;width:auto;will-change:transform}
+.cine .fcard{width:min(400px,78vw);height:46vh;flex:none}
+.fcard{min-height:300px;border-radius:26px;background:var(--bg2);border:1px solid var(--line);padding:36px;display:flex;flex-direction:column;justify-content:space-between}
+.fcard .n{font-family:Alexandria,sans-serif;font-weight:200;font-size:64px;line-height:1;color:var(--orange)}
+.fcard h4{font-family:Alexandria,sans-serif;font-weight:700;font-size:26px;margin:0 0 10px;line-height:1.3}
+.fcard p{margin:0;color:var(--mut);font-size:16px}
+
+/* 7. الختام */
+.cta{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:18vh 0 12vh}
+.cta h2{font-family:Alexandria,sans-serif;font-weight:800;font-size:clamp(46px,8vw,132px);line-height:1.02;margin:0;letter-spacing:-.035em;max-width:12ch}
+.cta-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:6vw;margin-top:9vh;align-items:start}
+.cta-row .side{display:flex;flex-direction:column;gap:22px}
+.plans{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.plan{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);font-size:15px}
+.plan b{font-family:Alexandria,sans-serif;font-weight:500}
+.plan span{color:var(--mut);text-align:left}
+form{display:flex;flex-direction:column;gap:26px}
+.f{display:flex;flex-direction:column;gap:4px}
+.f label,.f .lbl{font-size:13px;color:var(--mut)}
+.f input,.f textarea{width:100%;border:0;border-bottom:1px solid #2a2826;background:transparent;color:var(--fg);padding:12px 0;font:400 18px "IBM Plex Sans Arabic",sans-serif;border-radius:0;transition:border-color .3s}
+.f textarea{resize:vertical;min-height:70px;line-height:1.7}
+.f input:focus,.f textarea:focus{outline:0;border-bottom-color:var(--orange)}
+.f input::placeholder,.f textarea::placeholder{color:#55514b}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.opts{display:flex;flex-wrap:wrap;gap:8px;padding-top:10px;position:relative}
+.opts input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;inset-inline-start:0;top:0}
+.opts label{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border-radius:999px;border:1px solid #2a2826;font-size:14px;color:var(--fg);cursor:pointer;transition:all .3s}
+.opts input:checked + label{background:var(--fg);color:#000;border-color:var(--fg)}
+.opts input:focus-visible + label{outline:2px solid var(--orange);outline-offset:2px}
+.note{font-size:13px;margin:0;color:var(--mut)}
+
+footer{border-top:1px solid var(--line);padding:30px 0;font-size:13px;color:var(--mut)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer a{text-decoration:none;transition:color .3s}
+footer a:hover{color:var(--fg)}
+.powered{display:inline-flex;align-items:center;gap:12px}
+.powered img{height:26px;width:auto}
+
+.rv{opacity:0;transform:translateY(30px)}
+.static .rv{opacity:1;transform:none}
+.static .statement .w{opacity:1}
+
+@media (max-width:899px){
+  .nav-links a:not(.btn){display:none}
+  .statement{padding:14vh 0}
+  .nums-grid{grid-template-columns:1fr 1fr}
+  .num:nth-child(3){padding-inline-start:0;border-inline-start:0}
+  .mock{grid-template-columns:1fr;aspect-ratio:auto}
+  .m-side{display:none}
+  .cta-row,.two{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#F3EFE8"/><rect x="14" y="38" width="8" height="12" rx="2" fill="#050505"/><rect x="28" y="28" width="8" height="22" rx="2" fill="#050505"/><rect x="42" y="16" width="8" height="34" rx="2" fill="#F59A1B"/></symbol>
+  <symbol id="arr" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="أداء"><span class="lg" aria-hidden="true"><span class="alef">ا<i class="hm"><b></b><b></b><b></b></i></span>داء</span></a>
+    <nav class="nav-links" aria-label="أقسام الصفحة">
+      <a href="#screens">المنتج</a>
+      <a href="#ident">هويتك</a>
+      <a class="btn solid" href="#request">اطلب عرض</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="hero-txt" id="heroTxt">
+      <span class="eb">نظام متابعة أداء الفريق</span>
+      <h1 aria-label="أداء"><span class="lg big" aria-hidden="true"><span class="alef">ا<i class="hm"><b></b><b></b><b></b></i></span>داء</span><span class="dot" aria-hidden="true">.</span></h1>
+      <p>الفريق كله، بوضوح.</p>
+    </div>
+    <div class="hero-media" id="heroMedia">
+      <video id="demo" muted loop playsinline autoplay preload="auto" poster="video/poster.jpg" aria-label="جولة داخل النظام: كتابة مهام بأسلوب حر، اعتمادها، لوحة المهام والتحليل"><source src="video/demo.webm" type="video/webm"></video>
+      <button type="button" class="vid-ctl" id="vidCtl" aria-label="إيقاف الفيديو"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="i-play" d="M8 5l11 7-11 7z" fill="currentColor"/></svg></button>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">مرّر<i></i></div>
+  </section>
+
+  <section class="statement">
+    <div class="wrap">
+      <p id="stmt">خطة الشهر، مهام كل موظف، مواعيدها، جودتها، وتقييم آخر الشهر. كلها في مكان واحد، تشوفها بنظرة.</p>
+    </div>
+  </section>
+
+  <section class="screens" id="screens">
+    <div class="screens-in">
+      <div class="caps">
+        <div class="cap"><span class="k">01 · خطّط</span><h3>اكتب الخطة بأسلوبك.</h3><p>«لينا تطلق الحملة الخميس». تتحول لمهام موزعة حسب التخصص وضغط العمل.</p></div>
+        <div class="cap"><span class="k">02 · نظّم</span><h3>كل مهمة، في مكانها.</h3><p>جديدة، قيد التنفيذ، بانتظار المراجعة، مكتملة. لكل الفريق أو لكل شخص.</p></div>
+        <div class="cap"><span class="k">03 · تابع</span><h3>يقرأ الأرقام بدالك.</h3><p>تنبيه على المتأخر والمضغوط، وتوقع لوين بيقفل الشهر.</p></div>
+        <div class="cap"><span class="k">04 · قيّم</span><h3>التقييم جاهز.</h3><p>الإنجاز والمواعيد والجودة والمبادرة. تعتمد، ويوصل لكل موظف.</p></div>
+      </div>
+      <div class="deck">
+        <figure class="card" style="margin:0"><img src="img/dash.jpg" alt="لوحة القيادة"><figcaption class="mcap"><b>اكتب الخطة بأسلوبك.</b><span class="mut">وتتحول لمهام موزعة.</span></figcaption></figure>
+        <figure class="card" style="margin:0"><img src="img/tasks.jpg" alt="لوحة المهام" loading="lazy"><figcaption class="mcap"><b>كل مهمة، في مكانها.</b><span class="mut">لوحة مهام لكل الفريق.</span></figcaption></figure>
+        <figure class="card" style="margin:0"><img src="img/analyst.jpg" alt="تحليل الأداء" loading="lazy"><figcaption class="mcap"><b>يقرأ الأرقام بدالك.</b><span class="mut">تنبيهات وتوقعات.</span></figcaption></figure>
+        <figure class="card" style="margin:0"><img src="img/reviews.jpg" alt="التقييمات" loading="lazy"><figcaption class="mcap"><b>التقييم جاهز.</b><span class="mut">آخر كل شهر.</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="prog" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+  </section>
+
+  <section class="nums">
+    <div class="wrap nums-grid">
+      <div class="num rv"><strong data-to="4">4</strong><span>مستويات صلاحية، من مدير النظام إلى العضو</span></div>
+      <div class="num rv"><strong data-to="6">6</strong><span>أشهر من البيانات يقرأ منها الأنماط</span></div>
+      <div class="num rv"><strong data-to="100" data-suf="%">100%</strong><span>عربي، يفهم «بكرة» و«الخميس»</span></div>
+      <div class="num rv"><strong data-to="2" data-pre="$">$2</strong><span>سقف شهري ثابت لتحليل الملفات</span></div>
+    </div>
+  </section>
+
+  <section class="ident" id="ident">
+    <div class="ident-in">
+      <h2>يلبس هوية <span class="nm" id="nm">صيت</span>.</h2>
+      <div class="mock" id="mock" aria-hidden="true">
+        <div class="m-main">
+          <div class="m-head"><b>أهلاً نورة</b><span class="m-btn">رفع الخطة</span></div>
+          <div class="m-kpis">
+            <div class="m-kpi"><small>إنجاز الخطة</small><strong>68%</strong><span class="m-bar"><i style="width:68%"></i></span></div>
+            <div class="m-kpi"><small>المواعيد</small><strong>91%</strong><span class="m-bar"><i style="width:91%"></i></span></div>
+            <div class="m-kpi"><small>الجودة</small><strong>4.6</strong><span class="m-bar"><i style="width:92%"></i></span></div>
+          </div>
+          <div class="m-list">
+            <div class="m-row"><span class="av"></span><span class="t">نورة السالم</span><span class="bar"><i style="width:80%"></i></span><span class="p">80%</span></div>
+            <div class="m-row"><span class="av b"></span><span class="t">لينا</span><span class="bar"><i style="width:64%"></i></span><span class="p">64%</span></div>
+            <div class="m-row"><span class="av"></span><span class="t">دانة</span><span class="bar"><i style="width:72%"></i></span><span class="p">72%</span></div>
+            <div class="m-row"><span class="av b"></span><span class="t">فهد</span><span class="bar"><i style="width:55%"></i></span><span class="p">55%</span></div>
+          </div>
+        </div>
+        <div class="m-side"><div class="m-logo" id="mLogo">صيت</div><div class="m-nav on"><span></span></div><div class="m-nav"><span></span></div><div class="m-nav"><span></span></div><div class="m-nav"><span></span></div><div class="m-nav"><span></span></div></div>
+      </div>
+      <div class="dots" id="idots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="hz" id="features">
+    <div class="hz-head"><h2>وكل التفاصيل اللي تحتاجها.</h2><span class="mut" style="font-size:14px">مرّر</span></div>
+    <div class="hz-track" id="track">
+      <div class="fcard"><span class="n">01</span><div><h4>يقرأ ملف الخطة</h4><p>PDF أو Word أو Excel أو صورة، ويطلع منها المهام ويوزعها.</p></div></div>
+      <div class="fcard"><span class="n">02</span><div><h4>أقسام ورؤساء أقسام</h4><p>كل قسم له مؤشره، ورئيس القسم يدير قسمه فقط.</p></div></div>
+      <div class="fcard"><span class="n">03</span><div><h4>أسباب التأخير</h4><p>التأخير بسبب العميل أو المورد يتسجل وما ينحسب على الموظف.</p></div></div>
+      <div class="fcard"><span class="n">04</span><div><h4>موافقة على كل موظف</h4><p>الموظف يسجّل بنفسه، وما يدخل إلا بموافقة مدير النظام.</p></div></div>
+      <div class="fcard"><span class="n">05</span><div><h4>صلاحيات محمية</h4><p>كل شخص يشوف اللي يخصه، والحماية في قاعدة البيانات نفسها.</p></div></div>
+      <div class="fcard"><span class="n">06</span><div><h4>جوال وكمبيوتر</h4><p>من المتصفح، بدون تحميل تطبيق.</p></div></div>
+    </div>
+  </section>
+
+  <section class="cta" id="request">
+    <div class="wrap">
+      <h2 class="rv">اطلب نظام متابعة أداء <span class="o">لموظفينك الآن.</span></h2>
+      <div class="cta-row">
+        <div class="side rv">
+          <p class="mut" style="margin:0;font-size:17px;max-width:38ch">نجهزه بهوية شركتك، بأقسامك وفريقك ودومينك. السعر حسب حجم الفريق ونوع التجهيز.</p>
+          <div class="plans">
+            <div class="plan"><b>الأساسية</b><span>المهام والمتابعة والتقييم</span></div>
+            <div class="plan"><b>الاحترافية</b><span>+ الأقسام، تحليل الملفات، هويتك</span></div>
+            <div class="plan"><b>المؤسسات</b><span>+ دومينك، تخصيص، تدريب</span></div>
+          </div>
+        </div>
+        <form id="req" class="rv" novalidate>
+          <div class="two">
+            <div class="f"><label for="fName">الاسم</label><input id="fName" name="name" required autocomplete="name"></div>
+            <div class="f"><label for="fCo">الشركة</label><input id="fCo" name="company" required autocomplete="organization"></div>
+          </div>
+          <div class="f">
+            <span class="lbl" id="sizeL">عدد الموظفين</span>
+            <div class="opts" role="radiogroup" aria-labelledby="sizeL">
+              <input type="radio" name="size" id="s1" value="أقل من 10" checked><label for="s1">أقل من 10</label>
+              <input type="radio" name="size" id="s2" value="10 – 30"><label for="s2">10 – 30</label>
+              <input type="radio" name="size" id="s3" value="30 – 100"><label for="s3">30 – 100</label>
+              <input type="radio" name="size" id="s4" value="أكثر من 100"><label for="s4">+100</label>
+            </div>
+          </div>
+          <div class="f">
+            <span class="lbl" id="planL">الباقة</span>
+            <div class="opts" role="radiogroup" aria-labelledby="planL">
+              <input type="radio" name="plan" id="p0" value="ما حددت" checked><label for="p0">مو متأكد</label>
+              <input type="radio" name="plan" id="p1" value="الأساسية"><label for="p1">الأساسية</label>
+              <input type="radio" name="plan" id="p2" value="الاحترافية"><label for="p2">الاحترافية</label>
+              <input type="radio" name="plan" id="p3" value="المؤسسات"><label for="p3">المؤسسات</label>
+            </div>
+          </div>
+          <div class="f"><label for="fNotes">ملاحظات</label><textarea id="fNotes" name="notes" rows="2" placeholder="القطاع، أو أي شي يهمك"></textarea></div>
+          <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+            <button class="btn solid" type="submit">أرسل الطلب<svg aria-hidden="true"><use href="#arr"/></svg></button>
+            <p class="note" id="reqNote" role="status">يفتح في الواتساب جاهز للإرسال.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="أداء"><span class="lg" aria-hidden="true"><span class="alef">ا<i class="hm"><b></b><b></b><b></b></i></span>داء</span></a>
+    <span>تصميم وتطوير <a href="https://abdulmalek.site">عبدالملك الغامدي</a></span>
+    <span class="powered">بدعم من <img src="img/logo.png" alt="صيت"></span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nav = document.getElementById('nav');
+  var onScroll = function () { nav.classList.toggle('solid', window.scrollY > window.innerHeight * .6); };
+
+  // كلمات الجملة
+  var stmt = document.getElementById('stmt');
+  stmt.innerHTML = stmt.textContent.split(' ').map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ');
+
+  // الهويات
+  var THEMES = [
+    { name: 'صيت', bg: '#0d0907', side: '#090604', panel: '#140e0a', fg2: '#efe7dc', mt: '#a8917c', ac: '#d8c4a6', ac2: '#a9c7e8', rad: '14px', font: 'Amiri, Georgia, serif', col: '#d8c4a6' },
+    { name: 'أداء', bg: '#121212', side: '#0b0b0b', panel: '#1c1b1a', fg2: '#F1EEE8', mt: '#9A948B', ac: '#F59A1B', ac2: '#F1EEE8', rad: '12px', font: 'Alexandria, sans-serif', col: '#F59A1B' },
+    { name: 'نواة', bg: '#F4F7FF', side: '#FFFFFF', panel: '#FFFFFF', fg2: '#0B1B3F', mt: '#6B7896', ac: '#1F5EFF', ac2: '#7FA3FF', rad: '10px', font: 'Alexandria, sans-serif', col: '#6E95FF' },
+    { name: 'مزارع', bg: '#F3F1E9', side: '#E7E4D7', panel: '#FFFFFF', fg2: '#1D2B22', mt: '#6E7A70', ac: '#1F7A55', ac2: '#D9A441', rad: '18px', font: 'Alexandria, sans-serif', col: '#4FB487' }
+  ];
+  var mock = document.getElementById('mock'), mLogo = document.getElementById('mLogo'), nm = document.getElementById('nm'), idots = document.querySelectorAll('#idots i');
+  var curTheme = -1;
+  var applyTheme = function (i) {
+    if (i === curTheme) return; curTheme = i;
+    var t = THEMES[i];
+    ['bg', 'side', 'panel', 'fg2', 'mt', 'ac', 'ac2', 'rad'].forEach(function (k) { mock.style.setProperty('--' + k, t[k]); });
+    mLogo.textContent = t.name; mLogo.style.fontFamily = t.font;
+    nm.textContent = t.name; nm.style.color = t.col;
+    idots.forEach(function (d, j) { d.classList.toggle('on', j === i); });
+  };
+  applyTheme(0);
+
+  // الفيديو
+  var vid = document.getElementById('demo'), ctl = document.getElementById('vidCtl');
+  var userPaused = reduced;
+  if (reduced) { vid.removeAttribute('autoplay'); vid.pause(); }
+  var setCtl = function () { var p = vid.paused; ctl.classList.toggle('paused', p); ctl.setAttribute('aria-label', p ? 'تشغيل الفيديو' : 'إيقاف الفيديو'); };
+  vid.addEventListener('play', setCtl); vid.addEventListener('pause', setCtl); setCtl();
+  ctl.addEventListener('click', function () { if (vid.paused) { userPaused = false; vid.play(); } else { userPaused = true; vid.pause(); } });
+  new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !userPaused) vid.play().catch(function () {}); else if (!e.isIntersecting) vid.pause(); }); }, { threshold: .05 }).observe(vid);
+
+  // الطلب
+  document.getElementById('req').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, note = document.getElementById('reqNote');
+    if (!f.name.value.trim() || !f.company.value.trim()) { note.textContent = 'اكتب اسمك واسم الشركة.'; note.style.color = '#F59A1B'; (f.name.value.trim() ? f.company : f.name).focus(); return; }
+    var pick = function (n) { var x = f.querySelector('input[name=' + n + ']:checked'); return x ? x.value : ''; };
+    var msg = 'السلام عليكم، أبي عرض لنظام «أداء» لمتابعة أداء الموظفين.\n' +
+      'الاسم: ' + f.name.value.trim() + '\n' + 'الشركة: ' + f.company.value.trim() + '\n' +
+      'عدد الموظفين: ' + pick('size') + '\n' + 'الباقة: ' + pick('plan') + '\n' +
+      (f.notes.value.trim() ? 'ملاحظات: ' + f.notes.value.trim() : '');
+    window.open('https://wa.me/966533347092?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    note.textContent = 'انفتح الواتساب، اضغط إرسال هناك.'; note.style.color = '';
+  });
+
+  if (reduced || !window.gsap) {
+    document.body.classList.add('static');
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    return;
+  }
+
+  // تمرير ناعم
+  var lenis = window.Lenis ? new Lenis({ lerp: .085 }) : null;
+  gsap.registerPlugin(ScrollTrigger);
+  if (lenis) {
+    lenis.on('scroll', ScrollTrigger.update);
+    lenis.on('scroll', onScroll);
+    gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  } else { window.addEventListener('scroll', onScroll, { passive: true }); }
+  onScroll();
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) { var t = document.querySelector(a.getAttribute('href')); if (!t) return; e.preventDefault(); if (lenis) lenis.scrollTo(t, { offset: 0, duration: 1.6 }); else t.scrollIntoView({ behavior: 'smooth' }); });
+  });
+
+  // دخول الافتتاحية
+  gsap.from('.hero-txt > *', { y: 40, opacity: 0, duration: 1.4, ease: 'power4.out', stagger: .12, delay: .15 });
+  gsap.from('.hero-txt .hm b', { scaleY: 0, duration: 1.1, ease: 'power4.out', stagger: .14, delay: .9 });
+
+  var mm = gsap.matchMedia();
+  mm.add('(min-width: 900px)', function () {
+    document.body.classList.add('cine');
+    ScrollTrigger.refresh();
+    // 1. الفيديو يبدأ صغير تحت العنوان ويكبر لين يملأ الشاشة
+    gsap.set('#heroMedia', { xPercent: -50, yPercent: -50, y: '47vh', scale: .36, borderRadius: 48 });
+    var tl = gsap.timeline({ scrollTrigger: { trigger: '#hero', start: 'top top', end: '+=140%', scrub: 1, pin: true, anticipatePin: 1 } });
+    tl.to('#heroTxt', { opacity: 0, scale: .9, y: -80, ease: 'none', duration: .45 }, 0)
+      .to('#heroMedia', { scale: 1, y: 0, borderRadius: 0, ease: 'power1.inOut', duration: 1 }, 0)
+      .to('.scroll-cue', { opacity: 0, duration: .15 }, 0);
+
+    // 3. الشاشات تتبدل
+    var cards = gsap.utils.toArray('.card'), caps = gsap.utils.toArray('.cap'), bars = gsap.utils.toArray('.prog b');
+    gsap.set(cards.slice(1), { yPercent: 110, rotateX: -12, opacity: 0 });
+    gsap.set(caps[0], { opacity: 1 });
+    var st = gsap.timeline({ scrollTrigger: { trigger: '#screens', start: 'top top', end: '+=' + (cards.length * 90) + '%', scrub: 1, pin: true, anticipatePin: 1 } });
+    st.to(bars[0], { scaleX: 1, ease: 'none', duration: 1 }, 0);
+    for (var i = 1; i < cards.length; i++) {
+      var at = i;
+      st.to(cards[i - 1], { scale: .92, opacity: 0, ease: 'power2.inOut', duration: .8 }, at - .2)
+        .to(cards[i], { yPercent: 0, rotateX: 0, opacity: 1, ease: 'power3.out', duration: .8 }, at - .2)
+        .to(caps[i - 1], { opacity: 0, y: -30, duration: .35 }, at - .2)
+        .fromTo(caps[i], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .35 }, at + .05)
+        .to(bars[i], { scaleX: 1, ease: 'none', duration: 1 }, at);
+    }
+
+    // 5. الهوية تتبدل مع التمرير
+    ScrollTrigger.create({ trigger: '#ident', start: 'top top', end: '+=260%', pin: true, anticipatePin: 1,
+      onUpdate: function (s) { applyTheme(Math.min(THEMES.length - 1, Math.floor(s.progress * THEMES.length * .999))); } });
+    gsap.from('#mock', { y: 80, scale: .94, opacity: 0, ease: 'power3.out', scrollTrigger: { trigger: '#ident', start: 'top 80%', end: 'top 20%', scrub: 1 } });
+
+    // 6. المزايا أفقياً (يمين لليسار)
+    var track = document.getElementById('track');
+    var dist = function () { return Math.max(0, track.scrollWidth - window.innerWidth + Math.max(48, (window.innerWidth - 1240))); };
+    gsap.to(track, { x: function () { return dist(); }, ease: 'none', scrollTrigger: { trigger: '#features', start: 'top top', end: function () { return '+=' + dist(); }, scrub: 1, pin: true, anticipatePin: 1, invalidateOnRefresh: true } });
+    return function () { document.body.classList.remove('cine'); gsap.set('#heroMedia', { clearProps: 'all' }); };
+  });
+  mm.add('(max-width: 899px)', function () {
+    applyTheme(0);
+    var k = 0; setInterval(function () { k = (k + 1) % THEMES.length; applyTheme(k); }, 2200);
+    gsap.utils.toArray('.card').forEach(function (c) { gsap.from(c, { y: 50, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: c, start: 'top 88%' } }); });
+  });
+
+  // 2. الكلمات تنور مع التمرير
+  gsap.to('#stmt .w', { opacity: 1, ease: 'none', stagger: .1, scrollTrigger: { trigger: '.statement', start: 'top 70%', end: 'bottom 60%', scrub: 1 } });
+
+  // 4. الأرقام تعد
+  document.querySelectorAll('.num strong').forEach(function (el) {
+    var to = Number(el.dataset.to), pre = el.dataset.pre || '', suf = el.dataset.suf || '', o = { v: 0 };
+    el.textContent = pre + '0' + suf;
+    gsap.to(o, { v: to, duration: 1.8, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%' }, onUpdate: function () { el.textContent = pre + Math.round(o.v) + suf; } });
+  });
+
+  gsap.utils.toArray('.rv').forEach(function (el) {
+    gsap.to(el, { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+  });
+
+  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
